@@ -18,6 +18,19 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 .panel{background:#fff;border:1px solid #f0e5ea;border-radius:28px;box-shadow:0 18px 48px #ca9fb114}.editor{padding:30px}.editor-top,.preview-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.editor-top h2,.preview-top h2{margin:0;font-size:16px;letter-spacing:-.035em;font-weight:800}.subtle{font-size:11px;color:#99958f}.section{margin-top:24px;padding-top:23px;border-top:1px solid #f5eaf0}.section h3{font-size:14px;letter-spacing:-.02em;display:flex;gap:10px;align-items:center;margin:0 0 14px;font-weight:750}.step{display:grid;place-items:center;width:24px;height:24px;flex-shrink:0;border-radius:999px;background:#fff1f6;color:#b87a91;font-size:11px;font-weight:800;border:1px solid #f2d7e1}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field.wide{grid-column:1/-1}.field label,.field-label{color:#77746f;font-size:12px;font-weight:700}.field input:not([type=file]):not([type=range]),.field select,.field textarea{min-height:48px;width:100%;padding:12px 14px;border:1px solid #f0e2e8;background:#fffdfd;border-radius:17px;color:#4a4247;font-size:13px;outline-color:var(--focus);box-shadow:inset 0 1px 0 #fff8fb}.field select{cursor:pointer}.field textarea{resize:vertical;min-height:92px}.field input::placeholder,.field textarea::placeholder{color:#aaa7a3}.hint{color:#a3a09a;line-height:1.65;font-size:11px;margin:11px 0 0}
 .theme-picker{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.theme{min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:9px;padding:12px 2px;background:#fff;border-radius:18px;border:1px solid #f0e4ea;font-size:10px;color:#7d7378;font-weight:700}.theme[aria-pressed=true]{border-color:#dba6b8;box-shadow:0 8px 18px #efccd83d,inset 0 0 0 1px #dba6b8;color:#514248}.swatch{height:29px;width:29px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #ecdce3}.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.check{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:650;cursor:pointer;background:#fffdfd;border:1px solid #f0e4ea;border-radius:999px;padding:11px 13px}.check input{accent-color:#e2a8bb;width:16px;height:16px;flex-shrink:0;margin:0}.check:has(input:checked){background:#fff3f8;border-color:#edc9d6}
 .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.file-label{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;min-height:113px;padding:13px 9px;border:1px dashed #ddc7d1;background:#fff8fb;border-radius:22px;font-size:12px;font-weight:750;cursor:pointer}.file-label span{font-size:23px;filter:grayscale(.35)}.file-label small{color:#9f9b95;font-size:10px;font-weight:500;word-break:keep-all}.file-label input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}.remove-file{background:transparent;border:0;color:#8c8983;text-decoration:underline;font-size:11px;padding:5px 0;margin-top:5px}.crop-controls{display:none;background:#fff8fb;border:1px solid #f3e1e9;border-radius:20px;margin-top:11px;padding:14px}.crop-controls.active{display:block}.crop-controls .range-row{display:grid;grid-template-columns:38px 1fr;gap:8px;align-items:center;margin:8px 0}.crop-controls label{font-size:12px;color:#76736d;font-weight:700}.crop-controls input{width:100%;accent-color:#9c9b93}.photo-heading{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;gap:8px}
+.pattern-settings{margin-top:15px;background:#fff8fb;border:1px solid #f3e3eb;border-radius:22px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:17px 15px}
+.pattern-settings.is-disabled{opacity:.55}
+.pattern-slider{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pattern-slider .slider-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pattern-slider label,.pattern-color-wrap label{font-size:12px;color:#74666d;font-weight:750}
+.pattern-slider output{font-size:12px;color:#b47b90;font-weight:800;font-variant-numeric:tabular-nums}
+.pattern-slider input[type=range]{width:100%;height:19px;margin:0;accent-color:var(--accent);cursor:pointer}
+.pattern-color-wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pattern-color-wrap input[type=color]{background:#fff;cursor:pointer;width:56px;height:39px;border:1px solid #f0dce5;border-radius:15px;padding:4px}
+.pattern-color-wrap input[type=color]::-webkit-color-swatch-wrapper{padding:0}
+.pattern-color-wrap input[type=color]::-webkit-color-swatch{border:0;border-radius:10px}
+.pattern-color-wrap input[type=color]::-moz-color-swatch{border:0;border-radius:10px}
+@media(max-width:550px){.pattern-settings{padding:12px;gap:15px 12px;border-radius:18px}}
 .preview{position:sticky;top:20px;padding:25px}.preview-top{margin-bottom:17px}.preview-wrap{padding:14px;background:#fff6fa;border:1px solid #f3e4ea;border-radius:24px;overflow:hidden}.preview-wrap canvas{width:100%;height:auto;display:block;max-width:620px;margin:0 auto;background:white;box-shadow:0 12px 28px #d8aebe1a;border-radius:18px}.action-group{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.btn{min-height:47px;padding:10px 14px;border:1px solid #f0e2e8;background:#fff;color:#74666d;border-radius:999px;font-size:12px;font-weight:750;letter-spacing:-.01em}.btn.primary{border-color:#d89db0;background:#d89db0;color:white;font-size:13px;box-shadow:0 10px 22px #ebbfd04f}.btn.primary:hover{filter:brightness(.92)}.btn:disabled{opacity:.6;cursor:wait}.btn.full{grid-column:1/-1}.inline-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.inline-actions .btn{min-width:94px;flex:1;font-size:11px}.notice{border-top:1px solid #f2e4ea;color:#ab9aa2;font-size:11px;line-height:1.7;padding-top:14px;margin:14px 0 0}.status{font-size:12px;color:#b57790;font-weight:700;min-height:17px;margin:9px 0 0}.mini-mark{font-size:10px;color:#aaa7a3;text-align:center;margin-top:12px}.footer{color:#b3a0a8;font-size:12px;text-align:center;margin-top:23px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:1050px){.layout{grid-template-columns:minmax(0,1fr);max-width:680px;margin:0 auto}.preview{position:static;grid-row:1}.editor{grid-row:2}.page-head{max-width:680px;margin:0 auto 24px}.head-note{display:none}}
 @media(max-width:550px){.page{padding:24px 12px 45px}.page-head{padding-bottom:20px}.page-head h1{font-size:34px}.page-head p{font-size:13px}.editor,.preview{padding:18px}.preview-wrap{padding:7px}.theme-picker{gap:5px}.theme{font-size:9px;letter-spacing:-.04em;padding:10px 1px}.swatch{width:23px;height:23px}.section{margin-top:21px;padding-top:20px}.fields{gap:10px}.field input:not([type=file]):not([type=range]),.field select{padding:10px 8px;font-size:12px}.checks{gap:7px}.check{padding:9px 10px;font-size:11px}}
@@ -36,31 +49,44 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 <button aria-pressed="false" class="theme" data-theme="pink" type="button"><span class="swatch" style="background:#f3cdda"></span>블러쉬</button>
 <button aria-pressed="false" class="theme" data-theme="blue" type="button"><span class="swatch" style="background:#a9c6d8"></span>파우더 블루</button>
 <button aria-pressed="false" class="theme" data-theme="mono" type="button"><span class="swatch" style="background:#767677"></span> 모노</button></div></div>
-<div class="section"><h3><span class="step">2</span> 내 소개</h3><div class="fields">
+<div class="section"><h3><span class="step">2</span> 배경 무늬 꾸미기</h3>
+<div class="fields">
+<div class="field"><label for="pattern-kind">무늬 종류</label><select id="pattern-kind"><option value="none">무늬 없음</option><option value="dots">동글 도트</option><option value="hearts">작은 하트</option><option value="stars">반짝 별</option><option value="flowers">미니 꽃</option><option value="crosses">작은 십자</option></select></div>
+<div class="field"><label for="pattern-area">무늬 위치</label><select id="pattern-area"><option value="card">카드 배경</option><option value="photos">빈 사진 칸</option><option value="both">카드 + 빈 사진 칸</option></select></div>
+</div>
+<div class="pattern-settings" id="pattern-settings">
+<div class="pattern-slider"><div class="slider-head"><label for="pattern-size">무늬 크기</label><output id="pattern-size-value" for="pattern-size">12px</output></div><input id="pattern-size" min="6" max="40" step="1" type="range"/></div>
+<div class="pattern-slider"><div class="slider-head"><label for="pattern-gap">무늬 간격</label><output id="pattern-gap-value" for="pattern-gap">46px</output></div><input id="pattern-gap" min="8" max="110" step="2" type="range"/></div>
+<div class="pattern-slider"><div class="slider-head"><label for="pattern-opacity">무늬 진하기</label><output id="pattern-opacity-value" for="pattern-opacity">18%</output></div><input id="pattern-opacity" min="3" max="65" step="1" type="range"/></div>
+<div class="pattern-color-wrap"><label for="pattern-color">무늬 색상</label><input id="pattern-color" type="color" value="#e5afc1"/></div>
+</div>
+<p class="hint">무늬를 선택하면 크기, 무늬 사이 간격, 진하기, 색상을 조절할 수 있어요. 사진 칸의 큰 원 장식은 제거했어요. 미리보기와 PNG 저장에 동일하게 적용돼요.</p>
+</div>
+<div class="section"><h3><span class="step">3</span> 내 소개</h3><div class="fields">
 <div class="field"><label for="nickname">닉네임</label><input data-field="nickname" id="nickname" maxlength="18" placeholder="예: 모래"/></div>
 <div class="field"><label for="island">섬 이름</label><input data-field="island" id="island" maxlength="20" placeholder="예: 별사탕"/></div>
 <div class="field wide"><label for="handle">X 아이디 (선택)</label><input data-field="handle" id="handle" maxlength="40" placeholder="@ 없이 입력해도 돼요"/></div>
 </div></div>
-<div class="section"><h3><span class="step">3</span> 우리 섬 소개</h3><div class="fields">
+<div class="section"><h3><span class="step">4</span> 우리 섬 소개</h3><div class="fields">
 <div class="field"><label for="fruit">대표 과일</label><select data-field="fruit" id="fruit"><option value="미정">아직 몰라요</option><option value="🍎 사과">🍎 사과</option><option value="🍐 배">🍐 배</option><option value="🍒 체리">🍒 체리</option><option value="🍑 복숭아">🍑 복숭아</option><option value="🍊 오렌지">🍊 오렌지</option></select></div>
 <div class="field"><label for="vibe">섬 분위기</label><select data-field="vibe" id="vibe"><option>자연풍</option><option>동화풍</option><option>시골풍</option><option>도시풍</option><option>일본풍</option><option>바닷가풍</option><option>공주풍</option><option>빈티지풍</option><option>테마 고민 중</option><option>그때그때 달라요</option></select></div>
 <div class="field"><label for="playtime">접속 시간대</label><select data-field="playtime" id="playtime"><option>그때그때 달라요</option><option>오전</option><option>오후</option><option>저녁</option><option>새벽</option><option>주말 위주</option><option>매일 접속</option></select></div>
 <div class="field"><label for="dream">꿈번지 (선택)</label><input data-field="dream" id="dream" maxlength="25" placeholder="DA-0000-0000-0000"/></div>
 </div></div>
-<div class="section"><h3><span class="step">4</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
+<div class="section"><h3><span class="step">5</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
 <div class="field"><label for="fav1">첫 번째</label><input data-field="fav1" id="fav1" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field"><label for="fav2">두 번째</label><input data-field="fav2" id="fav2" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field wide"><label for="fav3">세 번째</label><input data-field="fav3" id="fav3" maxlength="14" placeholder="주민 이름"/></div>
 </div></div>
-<div class="section"><h3><span class="step">5</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
-<div class="section"><h3><span class="step">6</span> 섬 사진과 캐릭터</h3><div class="upload-grid">
+<div class="section"><h3><span class="step">6</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
+<div class="section"><h3><span class="step">7</span> 섬 사진과 캐릭터</h3><div class="upload-grid">
 <div><label class="file-label" for="cover-file"><span>▧</span>섬 사진 넣기<small id="cover-name">선택하지 않음</small><input accept="image/*" id="cover-file" type="file"/></label><button class="remove-file" data-remove="cover" type="button">섬 사진 지우기</button></div>
 <div><label class="file-label" for="avatar-file"><span>◯</span>캐릭터 사진 넣기<small id="avatar-name">선택하지 않음</small><input accept="image/*" id="avatar-file" type="file"/></label><button class="remove-file" data-remove="avatar" type="button">캐릭터 사진 지우기</button></div>
 </div>
 <div class="crop-controls" id="cover-controls"><div class="photo-heading">섬 사진 위치 / 크기 <button class="remove-file" data-reset-crop="cover" type="button">위치 초기화</button></div><div class="range-row"><label for="cover-x">좌우</label><input data-crop="cover" data-prop="x" id="cover-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-y">상하</label><input data-crop="cover" data-prop="y" id="cover-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-zoom">확대</label><input data-crop="cover" data-prop="zoom" id="cover-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
 <div class="crop-controls" id="avatar-controls"><div class="photo-heading">캐릭터 사진 위치 / 크기 <button class="remove-file" data-reset-crop="avatar" type="button">위치 초기화</button></div><div class="range-row"><label for="avatar-x">좌우</label><input data-crop="avatar" data-prop="x" id="avatar-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-y">상하</label><input data-crop="avatar" data-prop="y" id="avatar-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-zoom">확대</label><input data-crop="avatar" data-prop="zoom" id="avatar-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
 <p class="hint">사진을 넣으면 위 조절창에서 보이는 위치와 확대 정도를 바꿀 수 있어요. 사진 없이도 예쁘게 완성돼요.</p></div>
-<div class="section"><h3><span class="step">7</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
+<div class="section"><h3><span class="step">8</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
 <div class="section"><h3>☁︎ 내 설정 관리</h3><div class="inline-actions"><button class="btn" id="backup" type="button">설정 파일 저장</button><button class="btn" id="restore" type="button">설정 파일 불러오기</button><button class="btn" id="reset" type="button">처음부터</button></div><input accept=".json,application/json" hidden="" id="restore-file" type="file"/><p class="hint">입력 내용과 사진은 현재 브라우저에 자동 저장을 시도해요. 다른 기기로 옮기거나 오래 보관할 땐 ‘설정 파일 저장’을 이용해 주세요.</p></div>
 </section>
 <section aria-label="트친소표 미리보기" class="panel preview">
@@ -77,8 +103,10 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 const WIDTH=1200,HEIGHT=1600;
 const canvas=document.getElementById('card');const ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id);
-const DEFAULTS={theme:'cream',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],crop:{cover:{x:50,y:50,zoom:1},avatar:{x:50,y:50,zoom:1}}};
+const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{cover:{x:50,y:50,zoom:1},avatar:{x:50,y:50,zoom:1}}};
 const ACTS=['섬 구경','사진 찍기','주민 수다','통신 놀이','아이템 나눔','과일 교환','마이디자인','섬 꾸미기','일상 교류','느긋한 소통'];
+const PATTERN_TYPES=['none','dots','hearts','stars','flowers','crosses'];
+const PATTERN_AREAS=['card','photos','both'];
 const PALETTES={
 mint:{outer:'#eef0ed',paper:'#ffffff',ink:'#2b3933',muted:'#7f8e87',accent:'#658674',soft:'#e9efea',line:'#dce4dd',photo:'#e1e8e2'},
 cream:{outer:'#f4f2ef',paper:'#ffffff',ink:'#333330',muted:'#8f8b85',accent:'#9e8c72',soft:'#f2ede6',line:'#e8e2d8',photo:'#ede9e1'},
@@ -89,7 +117,16 @@ mono:{outer:'#ececeb',paper:'#ffffff',ink:'#242629',muted:'#8a8c8d',accent:'#5c5
 const FIELD_KEYS=['nickname','island','handle','fruit','vibe','playtime','dream','fav1','fav2','fav3','message'];
 let state=loadState(),photoData={cover:null,avatar:null},photoImages={cover:null,avatar:null},dbPromise=null,renderQueued=false,statusTimeout=null;
 function loadState(){try{const raw=JSON.parse(localStorage.getItem('island-friends-maker-v1')||'null');if(raw&&typeof raw==='object')return mergeState(raw)}catch(e){}return mergeState({})}
-function mergeState(o){const s=JSON.parse(JSON.stringify(DEFAULTS));for(const k of ['theme',...FIELD_KEYS])if(typeof o[k]==='string')s[k]=o[k].slice(0,100);if(!PALETTES[s.theme])s.theme='cream';if(Array.isArray(o.activities))s.activities=o.activities.filter(v=>ACTS.includes(v));for(const k of ['cover','avatar'])for(const p of ['x','y','zoom']){const n=Number(o.crop?.[k]?.[p]);if(Number.isFinite(n))s.crop[k][p]=p==='zoom'?Math.max(1,Math.min(2.5,n)):Math.max(0,Math.min(100,n))}return s}
+function mergeState(o){const s=JSON.parse(JSON.stringify(DEFAULTS));for(const k of ['theme',...FIELD_KEYS])if(typeof o[k]==='string')s[k]=o[k].slice(0,100);if(!PALETTES[s.theme])s.theme='pink';
+const pattern=o.pattern&&typeof o.pattern==='object'?o.pattern:{};
+if(PATTERN_TYPES.includes(pattern.kind))s.pattern.kind=pattern.kind;
+if(PATTERN_AREAS.includes(pattern.area))s.pattern.area=pattern.area;
+for(const [key,lo,hi] of [['size',6,40],['gap',8,110],['opacity',3,65]]){
+ if(pattern[key]!==undefined&&pattern[key]!==null&&pattern[key]!==''){
+  const n=Number(pattern[key]);if(Number.isFinite(n))s.pattern[key]=Math.min(hi,Math.max(lo,Math.round(n)));
+ }
+}
+if(typeof pattern.color==='string'&&/^#[0-9a-fA-F]{6}$/.test(pattern.color))s.pattern.color=pattern.color;if(Array.isArray(o.activities))s.activities=o.activities.filter(v=>ACTS.includes(v));for(const k of ['cover','avatar'])for(const p of ['x','y','zoom']){const n=Number(o.crop?.[k]?.[p]);if(Number.isFinite(n))s.crop[k][p]=p==='zoom'?Math.max(1,Math.min(2.5,n)):Math.max(0,Math.min(100,n))}return s}
 function persist(){try{localStorage.setItem('island-friends-maker-v1',JSON.stringify(state))}catch(e){}scheduleRender()}
 function status(msg){$('status').textContent=msg;clearTimeout(statusTimeout);statusTimeout=setTimeout(()=>$('status').textContent='',4800)}
 function scheduleRender(){if(renderQueued)return;renderQueued=true;requestAnimationFrame(()=>{renderQueued=false;draw()})}
@@ -100,7 +137,27 @@ function decodeImage(data){return new Promise((resolve,reject)=>{const img=new I
 async function setPhoto(mode,data,store=true){if(!data){photoData[mode]=null;photoImages[mode]=null;if(store)void photoStore(mode,null);updatePhotoUI(mode);scheduleRender();return}try{const img=await decodeImage(data);photoData[mode]=data;photoImages[mode]=img;if(store)void photoStore(mode,data);updatePhotoUI(mode);scheduleRender()}catch(e){status('이미지를 읽지 못했어요. JPG 또는 PNG로 다시 시도해 주세요.')}}
 function updatePhotoUI(mode){$(mode+'-controls').classList.toggle('active',!!photoImages[mode]);$(mode+'-name').textContent=photoImages[mode]?'사진 등록 완료':'선택하지 않음'}
 function updateCropUI(mode){for(const prop of ['x','y','zoom'])$(mode+'-'+prop).value=state.crop[mode][prop]}
-function syncUI(){FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['cover','avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
+function syncUI(){syncPatternUI();FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['cover','avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
+function syncPatternUI(){
+ $('pattern-kind').value=state.pattern.kind;
+ $('pattern-area').value=state.pattern.area;
+ for(const [key,suffix] of [['size','px'],['gap','px'],['opacity','%']]){
+  $('pattern-'+key).value=state.pattern[key];
+  $('pattern-'+key+'-value').textContent=state.pattern[key]+suffix;
+ }
+ $('pattern-color').value=state.pattern.color;
+ const off=state.pattern.kind==='none';
+ $('pattern-settings').classList.toggle('is-disabled',off);
+ $('pattern-settings').querySelectorAll('input').forEach(el=>el.disabled=off);
+}
+$('pattern-kind').addEventListener('change',e=>{state.pattern.kind=e.target.value;syncPatternUI();persist()});
+$('pattern-area').addEventListener('change',e=>{state.pattern.area=e.target.value;persist()});
+for(const key of ['size','gap','opacity'])$('pattern-'+key).addEventListener('input',e=>{
+ state.pattern[key]=Number(e.target.value);
+ $('pattern-'+key+'-value').textContent=state.pattern[key]+(key==='opacity'?'%':'px');
+ persist();
+});
+$('pattern-color').addEventListener('input',e=>{state.pattern.color=e.target.value;persist()});
 FIELD_KEYS.forEach(k=>$(k).addEventListener('input',e=>{state[k]=e.target.value;persist()}));
 document.querySelectorAll('[data-theme]').forEach(b=>b.addEventListener('click',()=>{state.theme=b.dataset.theme;syncTheme();persist()}));
 function syncTheme(){document.querySelectorAll('[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===state.theme)));const p=PALETTES[state.theme];document.documentElement.style.setProperty('--accent',p.accent);document.documentElement.style.setProperty('--focus',p.accent);const primary=document.querySelector('.btn.primary');primary.style.background=p.accent;primary.style.borderColor=p.accent}
@@ -129,25 +186,71 @@ function fitted(value,x,y,maxWidth,size,color,weight=700,minSize=21,align='left'
 function wrapLines(value,maxWidth,maxLines,size,weight=600){const result=[];let current='';font(size,weight);for(const c of Array.from(String(value))){if(c==='\r')continue;if(c==='\n'){result.push(current);current='';continue}if(ctx.measureText(current+c).width>maxWidth&&current){result.push(current);current=''}current+=c}if(current||!result.length)result.push(current);if(result.length>maxLines){result.length=maxLines;let end=result[maxLines-1];while(end&&ctx.measureText(end+'…').width>maxWidth)end=Array.from(end).slice(0,-1).join('');result[maxLines-1]=end+'…'}return result}
 function multiline(value,x,y,maxWidth,maxLines,size,lineHeight,color,weight=600){wrapLines(value,maxWidth,maxLines,size,weight).forEach((str,i)=>text(str,x,y+i*lineHeight,size,color,weight))}
 function cropImage(img,x,y,w,h,settings,radius=0){if(!img)return;ctx.save();rr(x,y,w,h,radius);ctx.clip();const iw=img.naturalWidth,ih=img.naturalHeight,scale=Math.max(w/iw,h/ih)*(settings.zoom||1),dw=iw*scale,dh=ih*scale;const left=x-(dw-w)*(settings.x/100),top=y-(dh-h)*(settings.y/100);ctx.drawImage(img,left,top,dw,dh);ctx.restore()}
+// 무늬는 캔버스에 직접 그려 PNG와 미리보기에 똑같이 표시합니다.
+function patternShape(cx,cy,size,kind){
+ const r=size/2;
+ ctx.beginPath();
+ if(kind==='dots'){ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();return}
+ if(kind==='hearts'){
+  ctx.moveTo(cx,cy+r*.80);
+  ctx.bezierCurveTo(cx-r*.3,cy+r*.51,cx-r*1.22,cy-r*.12,cx-r*.79,cy-r*.62);
+  ctx.bezierCurveTo(cx-r*.38,cy-r*1.02,cx,cy-r*.67,cx,cy-r*.37);
+  ctx.bezierCurveTo(cx,cy-r*.67,cx+r*.38,cy-r*1.02,cx+r*.79,cy-r*.62);
+  ctx.bezierCurveTo(cx+r*1.22,cy-r*.12,cx+r*.3,cy+r*.51,cx,cy+r*.80);
+  ctx.fill();return;
+ }
+ if(kind==='stars'){
+  for(let j=0;j<10;j++){
+   const ang=-Math.PI/2+j*Math.PI/5,dist=j%2?r*.45:r;
+   const px=cx+Math.cos(ang)*dist,py=cy+Math.sin(ang)*dist;
+   if(j===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);
+  }ctx.closePath();ctx.fill();return;
+ }
+ if(kind==='flowers'){
+  for(let j=0;j<5;j++){
+   const a=-Math.PI/2+j*Math.PI*2/5;
+   ctx.moveTo(cx+Math.cos(a)*r*.53+r*.3,cy+Math.sin(a)*r*.53);
+   ctx.arc(cx+Math.cos(a)*r*.53,cy+Math.sin(a)*r*.53,r*.3,0,Math.PI*2);
+  }ctx.fill();
+  ctx.beginPath();ctx.arc(cx,cy,r*.24,0,Math.PI*2);
+  ctx.save();ctx.globalAlpha*=.45;ctx.fill();ctx.restore();return;
+ }
+ if(kind==='crosses'){
+  const thick=Math.max(1.5,size*.19);
+  ctx.lineWidth=thick;ctx.lineCap='round';
+  ctx.moveTo(cx-r,cy);ctx.lineTo(cx+r,cy);
+  ctx.moveTo(cx,cy-r);ctx.lineTo(cx,cy+r);
+  ctx.stroke();
+ }
+}
+function drawPattern(x,y,w,h,radius){
+ const cfg=state.pattern;if(cfg.kind==='none')return;
+ ctx.save();rr(x,y,w,h,radius);ctx.clip();
+ ctx.fillStyle=cfg.color;ctx.strokeStyle=cfg.color;ctx.globalAlpha=cfg.opacity/100;
+ const pitch=cfg.size+cfg.gap;
+ for(let row=0,cy=y+pitch/2;cy<y+h+cfg.size;row++,cy+=pitch){
+  const offset=row%2?pitch/2:0;
+  for(let cx=x+pitch/2+offset;cx<x+w+cfg.size;cx+=pitch)patternShape(cx,cy,cfg.size,cfg.kind);
+ }
+ ctx.restore();
+}
 function placeholder(x,y,w,h,p,kind){
  rect(x,y,w,h,28,p.photo);
  ctx.save();rr(x,y,w,h,28);ctx.clip();
- // 무늬보다 여백이 돋보이는 기하학적 배경
- ctx.globalAlpha=.34;circle(x+w*.77,y+h*.30,Math.min(w,h)*.36,p.paper);circle(x+w*.80,y+h*.34,Math.min(w,h)*.23,p.soft);ctx.globalAlpha=1;
+ if(state.pattern.area==='photos'||state.pattern.area==='both')drawPattern(x,y,w,h,28);
  if(kind==='cover'){
- rect(x+28,y+28,w-56,h-56,18,null,p.line,2);
- text('PHOTO / 01',x+57,y+77,20,p.muted,700);
- line(x+57,y+h-118,x+175,y+h-118,p.accent,5);
- text('YOUR ISLAND',x+57,y+h-68,47,p.ink,800);
- text('ADD A FAVORITE SCREENSHOT',x+57,y+h-32,19,p.muted,550);
+  rect(x+28,y+28,w-56,h-56,18,null,p.line,2);
+  text('PHOTO / 01',x+57,y+77,20,p.muted,700);
+  line(x+57,y+h-118,x+175,y+h-118,p.accent,5);
+  text('YOUR ISLAND',x+57,y+h-68,47,p.ink,800);
+  text('ADD A FAVORITE SCREENSHOT',x+57,y+h-32,19,p.muted,550);
  }else{
- circle(x+w*.5,y+h*.39,81,p.soft,p.line,2);
- circle(x+w*.5,y+h*.35,27,p.muted);
- ctx.save();ctx.beginPath();ctx.arc(x+w*.5,y+h*.39,78,0,2*Math.PI);ctx.clip();ctx.fillStyle=p.muted;ctx.beginPath();ctx.ellipse(x+w*.5,y+h*.66,74,61,0,0,2*Math.PI);ctx.fill();ctx.restore();
- text('MY CHARACTER',x+w*.5,y+h-62,21,p.ink,800,'center');
- text('PHOTO / 02',x+w*.5,y+h-31,17,p.muted,600,'center');
+  rect(x+25,y+27,w-50,h-54,18,null,p.line,2);
+  text('02',x+w*.5,y+h*.53,77,p.muted,800,'center');
+  text('MY CHARACTER',x+w*.5,y+h-62,21,p.ink,800,'center');
+  text('PHOTO / 02',x+w*.5,y+h-31,17,p.muted,600,'center');
  }
- ctx.restore()
+ ctx.restore();
 }
 function caps(value,x,y,p,align='left'){text(value,x,y,20,p.accent,800,align)}
 function pill(value,x,y,maxW,p,filled=false){let label=String(value);font(24,700);let w=Math.min(maxW,Math.max(107,ctx.measureText(label).width+54));if(w<75)return 0;const available=w-42;while(ctx.measureText(label).width>available&&label.length>1){label=Array.from(label).slice(0,-1).join('');font(24,700)}if(label!==String(value))label=Array.from(label).slice(0,-1).join('')+'…';rect(x,y,w,51,26,filled?p.soft:p.paper,p.line,1.6);text(label,x+22,y+35,23,p.ink,650);return w}
@@ -157,6 +260,7 @@ function draw(){
  const p=PALETTES[state.theme]||PALETTES.cream;ctx.clearRect(0,0,WIDTH,HEIGHT);
  ctx.fillStyle=p.outer;ctx.fillRect(0,0,WIDTH,HEIGHT);
  rect(32,32,1136,1536,34,p.paper,p.line,2);
+ if(state.pattern.area==='card'||state.pattern.area==='both')drawPattern(32,32,1136,1536,34);
  rect(76,92,12,48,12,p.accent);
  caps('FRIENDS  /  PROFILE CARD',105,117,p);
  text('01 — INTRODUCTION',1124,117,20,p.muted,650,'right');
