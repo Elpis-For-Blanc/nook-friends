@@ -7,7 +7,11 @@
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#f6f5f3" name="theme-color"/>
 <meta content="깔끔한 미니멀 프로필 카드로 만드는 모동숲 트친소표. 사진과 소개를 넣어 PNG로 저장해요." name="description"/>
-<title>ACNH PROFILE | 미니멀 트친소표 메이커</title>
+<title>ACNH PROFILE | 트친소 카드 메이커</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
 <style>
 :root{color-scheme:light;--bg:#fffafd;--text:#40383d;--paper:#ffffff;--soft:#fff7fb;--border:#f4e4ec;--accent:#f0b7cb;--focus:#f5c7d7}
 *{box-sizing:border-box}
@@ -43,12 +47,22 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 .preview{position:sticky;top:20px;padding:25px}.preview-top{margin-bottom:17px}.preview-wrap{padding:14px;background:#fff6fa;border:1px solid #f3e4ea;border-radius:24px;overflow:hidden}.preview-wrap canvas{width:100%;height:auto;display:block;max-width:620px;margin:0 auto;background:white;box-shadow:0 12px 28px #d8aebe1a;border-radius:18px}.action-group{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.btn{min-height:47px;padding:10px 14px;border:1px solid #f0e2e8;background:#fff;color:#74666d;border-radius:999px;font-size:12px;font-weight:750;letter-spacing:-.01em}.btn.primary{border-color:#d89db0;background:#d89db0;color:white;font-size:13px;box-shadow:0 10px 22px #ebbfd04f}.btn.primary:hover{filter:brightness(.92)}.btn:disabled{opacity:.6;cursor:wait}.btn.full{grid-column:1/-1}.inline-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.inline-actions .btn{min-width:94px;flex:1;font-size:11px}.notice{border-top:1px solid #f2e4ea;color:#ab9aa2;font-size:11px;line-height:1.7;padding-top:14px;margin:14px 0 0}.status{font-size:12px;color:#b57790;font-weight:700;min-height:17px;margin:9px 0 0}.mini-mark{font-size:10px;color:#aaa7a3;text-align:center;margin-top:12px}.footer{color:#b3a0a8;font-size:12px;text-align:center;margin-top:23px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:1050px){.layout{grid-template-columns:minmax(0,1fr);max-width:680px;margin:0 auto}.preview{position:static;grid-row:1}.editor{grid-row:2}.page-head{max-width:680px;margin:0 auto 24px}.head-note{display:none}}
 @media(max-width:550px){.page{padding:24px 12px 45px}.page-head{padding-bottom:20px}.page-head h1{font-size:34px}.page-head p{font-size:13px}.editor,.preview{padding:18px}.preview-wrap{padding:7px}.theme-picker{gap:5px}.theme{font-size:9px;letter-spacing:-.04em;padding:10px 1px}.swatch{width:23px;height:23px}.section{margin-top:21px;padding-top:20px}.fields{gap:10px}.field input:not([type=file]):not([type=range]),.field select{padding:10px 8px;font-size:12px}.checks{gap:7px}.check{padding:9px 10px;font-size:11px}}
+
+.typography-settings{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.type-controls{display:grid;grid-template-columns:1fr;gap:13px;margin-top:15px;padding:15px;border:1px solid #f3e3eb;border-radius:20px;background:#fff8fb}
+.type-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.type-row label{font-size:12px;font-weight:750;color:#74666d}
+.type-row output{font-size:12px;font-weight:800;color:#b47b90;font-variant-numeric:tabular-nums}
+.type-controls input[type=range]{width:100%;margin:0;accent-color:var(--accent)}
+.type-help{font-size:11px;color:#a18b97;margin:10px 0 0;line-height:1.6}
+@media(max-width:550px){.typography-settings{grid-template-columns:1fr}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <main class="page">
-<header class="page-head"><div class="page-title"><span class="eyebrow">DEARLY  /  FRIENDS PROFILE MAKER</span><h1>나의 트친소 프로필</h1><p>내 사진과 섬 정보를 말랑한 미니멀 카드 한 장에 담아보세요.</p></div><span class="head-note">ANIMAL CROSSING  ·  FRIENDS INTRODUCTION</span></header>
+<header class="page-head"><div class="page-title"><span class="eyebrow">DEARLY  /  FRIENDS PROFILE MAKER</span><h1>나의 트친소 프로필</h1><p>섬 이름과 주민대표 이름을 크게 담은 동글동글한 프로필 카드.</p></div><span class="head-note">ANIMAL CROSSING  ·  FRIENDS INTRODUCTION</span></header>
 <div class="layout">
 <section aria-labelledby="editor-title" class="panel editor">
 <div class="editor-top"><h2 id="editor-title">프로필 편집</h2><span class="subtle">실시간 미리보기</span></div>
@@ -72,7 +86,22 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 <div class="inline-actions color-reset-wrap"><button class="btn" id="reset-colors" type="button">테마 색으로 되돌리기</button></div>
 <p class="hint">테마를 고른 뒤 원하는 항목만 직접 바꿀 수 있어요. 직접 지정한 색은 테마보다 우선 적용돼요.</p>
 </div>
-<div class="section"><h3><span class="step">3</span> 배경 무늬 꾸미기</h3>
+<div class="section"><h3><span class="step">3</span> 글꼴 · 글자 크기</h3>
+<div class="typography-settings">
+<div class="field wide"><label for="font-main">전체 글꼴</label><select id="font-main">
+<option value="sans">노토 산스 · 단정한 고딕</option><option value="round">주아 · 동글동글</option><option value="gowun">고운돋움 · 부드러운 글씨</option><option value="nanum">나눔고딕 · 깔끔한 고딕</option><option value="gaegu">개구 · 손글씨 느낌</option><option value="serif">나눔명조 · 감성 명조</option><option value="batang">고운바탕 · 아기자기한 명조</option>
+</select></div>
+<div class="field"><label for="font-island">섬 이름 글꼴</label><select id="font-island"><option value="inherit">전체 글꼴 따르기</option><option value="sans">노토 산스</option><option value="round">주아</option><option value="gowun">고운돋움</option><option value="nanum">나눔고딕</option><option value="gaegu">개구</option><option value="serif">나눔명조</option><option value="batang">고운바탕</option></select></div>
+<div class="field"><label for="font-nickname">주민대표 이름 글꼴</label><select id="font-nickname"><option value="inherit">전체 글꼴 따르기</option><option value="sans">노토 산스</option><option value="round">주아</option><option value="gowun">고운돋움</option><option value="nanum">나눔고딕</option><option value="gaegu">개구</option><option value="serif">나눔명조</option><option value="batang">고운바탕</option></select></div>
+</div>
+<div class="type-controls">
+<div><div class="type-row"><label for="size-island">섬 이름 크기</label><output id="size-island-value">70px</output></div><input id="size-island" type="range" min="42" max="96" step="1"/></div>
+<div><div class="type-row"><label for="size-nickname">주민대표 이름 크기</label><output id="size-nickname-value">70px</output></div><input id="size-nickname" type="range" min="42" max="96" step="1"/></div>
+<div><div class="type-row"><label for="size-body">본문 · 정보 글자 크기</label><output id="size-body-value">24px</output></div><input id="size-body" type="range" min="18" max="30" step="1"/></div>
+</div>
+<p class="type-help">두 이름은 기본 70px로 똑같이 크게 설정했어. 글꼴이 로딩된 뒤 PNG에도 적용되며, 글꼴을 불러올 수 없을 때는 기기에 있는 기본 글꼴로 표시돼요.</p>
+</div>
+<div class="section"><h3><span class="step">4</span> 배경 무늬 꾸미기</h3>
 <div class="fields">
 <div class="field"><label for="pattern-kind">무늬 종류</label><select id="pattern-kind"><option value="none">무늬 없음</option><option value="dots">동글 도트</option><option value="hearts">작은 하트</option><option value="stars">반짝 별</option><option value="flowers">미니 꽃</option><option value="crosses">작은 십자</option></select></div>
 <div class="field"><label for="pattern-area">무늬 위치</label><select id="pattern-area"><option value="card">카드 배경</option><option value="photos">빈 사진 칸</option><option value="both">카드 + 빈 사진 칸</option></select></div>
@@ -83,33 +112,32 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 <div class="pattern-slider"><div class="slider-head"><label for="pattern-opacity">무늬 진하기</label><output id="pattern-opacity-value" for="pattern-opacity">18%</output></div><input id="pattern-opacity" min="3" max="65" step="1" type="range"/></div>
 <div class="pattern-color-wrap"><label for="pattern-color">무늬 색상</label><input id="pattern-color" type="color" value="#e5afc1"/></div>
 </div>
-<p class="hint">무늬를 선택하면 크기, 무늬 사이 간격, 진하기, 색상을 조절할 수 있어요. 사진 칸의 큰 원 장식은 제거했어요. 미리보기와 PNG 저장에 동일하게 적용돼요.</p>
+<p class="hint">무늬를 선택하면 크기, 무늬 사이 간격, 진하기, 색상을 조절할 수 있어요. 기본 사진 칸의 큰 원 장식은 제거했어요. 미리보기와 PNG 저장에 동일하게 적용돼요.</p>
 </div>
-<div class="section"><h3><span class="step">4</span> 내 소개</h3><div class="fields">
-<div class="field"><label for="nickname">닉네임</label><input data-field="nickname" id="nickname" maxlength="18" placeholder="예: 모래"/></div>
+<div class="section"><h3><span class="step">5</span> 내 소개</h3><div class="fields">
+<div class="field"><label for="nickname">주민대표 이름</label><input data-field="nickname" id="nickname" maxlength="18" placeholder="예: 모래"/></div>
 <div class="field"><label for="island">섬 이름</label><input data-field="island" id="island" maxlength="20" placeholder="예: 별사탕"/></div>
 <div class="field wide"><label for="handle">X 아이디 (선택)</label><input data-field="handle" id="handle" maxlength="40" placeholder="@ 없이 입력해도 돼요"/></div>
 </div></div>
-<div class="section"><h3><span class="step">5</span> 우리 섬 소개</h3><div class="fields">
+<div class="section"><h3><span class="step">6</span> 우리 섬 소개</h3><div class="fields">
 <div class="field"><label for="fruit">대표 과일</label><select data-field="fruit" id="fruit"><option value="미정">아직 몰라요</option><option value="🍎 사과">🍎 사과</option><option value="🍐 배">🍐 배</option><option value="🍒 체리">🍒 체리</option><option value="🍑 복숭아">🍑 복숭아</option><option value="🍊 오렌지">🍊 오렌지</option></select></div>
 <div class="field"><label for="vibe">섬 분위기</label><select data-field="vibe" id="vibe"><option>자연풍</option><option>동화풍</option><option>시골풍</option><option>도시풍</option><option>일본풍</option><option>바닷가풍</option><option>공주풍</option><option>빈티지풍</option><option>테마 고민 중</option><option>그때그때 달라요</option></select></div>
 <div class="field"><label for="playtime">접속 시간대</label><select data-field="playtime" id="playtime"><option>그때그때 달라요</option><option>오전</option><option>오후</option><option>저녁</option><option>새벽</option><option>주말 위주</option><option>매일 접속</option></select></div>
 <div class="field"><label for="dream">꿈번지 (선택)</label><input data-field="dream" id="dream" maxlength="25" placeholder="DA-0000-0000-0000"/></div>
 </div></div>
-<div class="section"><h3><span class="step">6</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
+<div class="section"><h3><span class="step">7</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
 <div class="field"><label for="fav1">첫 번째</label><input data-field="fav1" id="fav1" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field"><label for="fav2">두 번째</label><input data-field="fav2" id="fav2" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field wide"><label for="fav3">세 번째</label><input data-field="fav3" id="fav3" maxlength="14" placeholder="주민 이름"/></div>
 </div></div>
-<div class="section"><h3><span class="step">7</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
-<div class="section"><h3><span class="step">8</span> 섬 사진과 캐릭터</h3><div class="upload-grid">
-<div><label class="file-label" for="cover-file"><span>▧</span>섬 사진 넣기<small id="cover-name">선택하지 않음</small><input accept="image/*" id="cover-file" type="file"/></label><button class="remove-file" data-remove="cover" type="button">섬 사진 지우기</button></div>
-<div><label class="file-label" for="avatar-file"><span>◯</span>캐릭터 사진 넣기<small id="avatar-name">선택하지 않음</small><input accept="image/*" id="avatar-file" type="file"/></label><button class="remove-file" data-remove="avatar" type="button">캐릭터 사진 지우기</button></div>
+<div class="section"><h3><span class="step">8</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
+<div class="section"><h3><span class="step">9</span> 대표 캐릭터 사진</h3>
+<div class="upload-grid" style="grid-template-columns:1fr;max-width:340px">
+<div><label class="file-label" for="avatar-file"><span>♡</span>캐릭터 사진 넣기<small id="avatar-name">선택하지 않음</small><input accept="image/*" id="avatar-file" type="file"/></label><button class="remove-file" data-remove="avatar" type="button">캐릭터 사진 지우기</button></div>
 </div>
-<div class="crop-controls" id="cover-controls"><div class="photo-heading">섬 사진 위치 / 크기 <button class="remove-file" data-reset-crop="cover" type="button">위치 초기화</button></div><div class="range-row"><label for="cover-x">좌우</label><input data-crop="cover" data-prop="x" id="cover-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-y">상하</label><input data-crop="cover" data-prop="y" id="cover-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-zoom">확대</label><input data-crop="cover" data-prop="zoom" id="cover-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
 <div class="crop-controls" id="avatar-controls"><div class="photo-heading">캐릭터 사진 위치 / 크기 <button class="remove-file" data-reset-crop="avatar" type="button">위치 초기화</button></div><div class="range-row"><label for="avatar-x">좌우</label><input data-crop="avatar" data-prop="x" id="avatar-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-y">상하</label><input data-crop="avatar" data-prop="y" id="avatar-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-zoom">확대</label><input data-crop="avatar" data-prop="zoom" id="avatar-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
-<p class="hint">사진을 넣으면 위 조절창에서 보이는 위치와 확대 정도를 바꿀 수 있어요. 사진 없이도 예쁘게 완성돼요.</p></div>
-<div class="section"><h3><span class="step">9</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
+<p class="hint">섬 사진 영역 없이, 대표 캐릭터 사진 한 장만 선택할 수 있어요. 사진 없이도 카드가 완성돼요.</p></div>
+<div class="section"><h3><span class="step">10</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
 <div class="section"><h3>☁︎ 내 설정 관리</h3><div class="inline-actions"><button class="btn" id="backup" type="button">설정 파일 저장</button><button class="btn" id="restore" type="button">설정 파일 불러오기</button><button class="btn" id="reset" type="button">처음부터</button></div><input accept=".json,application/json" hidden="" id="restore-file" type="file"/><p class="hint">입력 내용과 사진은 현재 브라우저에 자동 저장을 시도해요. 다른 기기로 옮기거나 오래 보관할 땐 ‘설정 파일 저장’을 이용해 주세요.</p></div>
 </section>
 <section aria-label="트친소표 미리보기" class="panel preview">
@@ -126,7 +154,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 const WIDTH=1200,HEIGHT=1600;
 const canvas=document.getElementById('card');const ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id);
-const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],customColors:{outer:'',paper:'',line:'',accent:'',soft:'',photo:'',ink:'',muted:''},pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{cover:{x:50,y:50,zoom:1},avatar:{x:50,y:50,zoom:1}}};
+const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],typography:{family:'round',islandFont:'inherit',nicknameFont:'inherit',islandSize:70,nicknameSize:70,bodySize:24},customColors:{outer:'',paper:'',line:'',accent:'',soft:'',photo:'',ink:'',muted:''},pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{avatar:{x:50,y:50,zoom:1}}};
 const ACTS=['섬 구경','사진 찍기','주민 수다','통신 놀이','아이템 나눔','과일 교환','마이디자인','섬 꾸미기','일상 교류','느긋한 소통'];
 const PATTERN_TYPES=['none','dots','hearts','stars','flowers','crosses'];
 const PATTERN_AREAS=['card','photos','both'];
@@ -139,9 +167,17 @@ mono:{outer:'#ececeb',paper:'#ffffff',ink:'#242629',muted:'#8a8c8d',accent:'#5c5
 };
 const FIELD_KEYS=['nickname','island','handle','fruit','vibe','playtime','dream','fav1','fav2','fav3','message'];
 const COLOR_KEYS=['outer','paper','line','accent','soft','photo','ink','muted'];
-let state=loadState(),photoData={cover:null,avatar:null},photoImages={cover:null,avatar:null},dbPromise=null,renderQueued=false,statusTimeout=null;
+const FONT_PRESETS={sans:'"Noto Sans KR","Malgun Gothic",sans-serif',round:'"Jua","NanumSquareRound","Malgun Gothic",sans-serif',gowun:'"Gowun Dodum","Nanum Gothic",sans-serif',nanum:'"Nanum Gothic","Malgun Gothic",sans-serif',gaegu:'"Gaegu","UnPenheulim",sans-serif',serif:'"Nanum Myeongjo",serif',batang:'"Gowun Batang","Nanum Myeongjo",serif'};
+const FONT_KEYS=Object.keys(FONT_PRESETS);
+let state=loadState(),photoData={avatar:null},photoImages={avatar:null},dbPromise=null,renderQueued=false,statusTimeout=null;
 function loadState(){try{const raw=JSON.parse(localStorage.getItem('island-friends-maker-v1')||'null');if(raw&&typeof raw==='object')return mergeState(raw)}catch(e){}return mergeState({})}
 function mergeState(o){const s=JSON.parse(JSON.stringify(DEFAULTS));for(const k of ['theme',...FIELD_KEYS])if(typeof o[k]==='string')s[k]=o[k].slice(0,100);if(!PALETTES[s.theme])s.theme='pink';
+const ty=o.typography&&typeof o.typography==='object'?o.typography:{};
+if(FONT_KEYS.includes(ty.family))s.typography.family=ty.family;
+for(const key of ['islandFont','nicknameFont'])if(ty[key]==='inherit'||FONT_KEYS.includes(ty[key]))s.typography[key]=ty[key];
+for(const [key,lo,hi] of [['islandSize',42,96],['nicknameSize',42,96],['bodySize',18,30]]){
+ if(ty[key]!==undefined){const n=Number(ty[key]);if(Number.isFinite(n))s.typography[key]=Math.max(lo,Math.min(hi,Math.round(n)))}
+}
 const custom=o.customColors&&typeof o.customColors==='object'?o.customColors:{};
 for(const key of COLOR_KEYS){if(typeof custom[key]==='string'&&/^#[0-9a-fA-F]{6}$/.test(custom[key]))s.customColors[key]=custom[key]}
 const pattern=o.pattern&&typeof o.pattern==='object'?o.pattern:{};
@@ -152,7 +188,7 @@ for(const [key,lo,hi] of [['size',6,40],['gap',8,110],['opacity',3,65]]){
   const n=Number(pattern[key]);if(Number.isFinite(n))s.pattern[key]=Math.min(hi,Math.max(lo,Math.round(n)));
  }
 }
-if(typeof pattern.color==='string'&&/^#[0-9a-fA-F]{6}$/.test(pattern.color))s.pattern.color=pattern.color;if(Array.isArray(o.activities))s.activities=o.activities.filter(v=>ACTS.includes(v));for(const k of ['cover','avatar'])for(const p of ['x','y','zoom']){const n=Number(o.crop?.[k]?.[p]);if(Number.isFinite(n))s.crop[k][p]=p==='zoom'?Math.max(1,Math.min(2.5,n)):Math.max(0,Math.min(100,n))}return s}
+if(typeof pattern.color==='string'&&/^#[0-9a-fA-F]{6}$/.test(pattern.color))s.pattern.color=pattern.color;if(Array.isArray(o.activities))s.activities=o.activities.filter(v=>ACTS.includes(v));for(const k of ['avatar'])for(const p of ['x','y','zoom']){const n=Number(o.crop?.[k]?.[p]);if(Number.isFinite(n))s.crop[k][p]=p==='zoom'?Math.max(1,Math.min(2.5,n)):Math.max(0,Math.min(100,n))}return s}
 function persist(){try{localStorage.setItem('island-friends-maker-v1',JSON.stringify(state))}catch(e){}scheduleRender()}
 function status(msg){$('status').textContent=msg;clearTimeout(statusTimeout);statusTimeout=setTimeout(()=>$('status').textContent='',4800)}
 function scheduleRender(){if(renderQueued)return;renderQueued=true;requestAnimationFrame(()=>{renderQueued=false;draw()})}
@@ -165,7 +201,7 @@ function updatePhotoUI(mode){$(mode+'-controls').classList.toggle('active',!!pho
 function updateCropUI(mode){for(const prop of ['x','y','zoom'])$(mode+'-'+prop).value=state.crop[mode][prop]}
 function currentPalette(){const p={...(PALETTES[state.theme]||PALETTES.pink)};for(const key of COLOR_KEYS){if(state.customColors[key])p[key]=state.customColors[key]}return p}
 function syncColorUI(){const p=currentPalette();for(const key of COLOR_KEYS){const el=$('color-'+key);if(el)el.value=state.customColors[key]||p[key]}}
-function syncUI(){syncPatternUI();syncColorUI();FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['cover','avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
+function syncUI(){syncPatternUI();syncColorUI();syncTypographyUI();FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
 function syncPatternUI(){
  $('pattern-kind').value=state.pattern.kind;
  $('pattern-area').value=state.pattern.area;
@@ -177,6 +213,31 @@ function syncPatternUI(){
  const off=state.pattern.kind==='none';
  $('pattern-settings').classList.toggle('is-disabled',off);
  $('pattern-settings').querySelectorAll('input').forEach(el=>el.disabled=off);
+}
+function syncTypographyUI(){
+ $('font-main').value=state.typography.family;
+ $('font-island').value=state.typography.islandFont;
+ $('font-nickname').value=state.typography.nicknameFont;
+ for(const [key,id] of [['islandSize','island'],['nicknameSize','nickname'],['bodySize','body']]){
+  $('size-'+id).value=state.typography[key];
+  $('size-'+id+'-value').textContent=state.typography[key]+'px';
+ }
+}
+function fontFamily(key){const name=key==='inherit'?state.typography.family:key;return FONT_PRESETS[name]||FONT_PRESETS.sans}
+async function ensureFonts(){
+ if(!document.fonts)return;
+ const selected=new Set([state.typography.family,state.typography.islandFont,state.typography.nicknameFont].filter(k=>k!=='inherit'));
+ await Promise.all([...selected].map(async key=>{
+  try{await Promise.race([document.fonts.load(`700 28px ${fontFamily(key)}`),new Promise(resolve=>setTimeout(resolve,6000))])}catch(e){}
+ }));
+ scheduleRender();
+}
+let fontRequest=0;
+for(const [id,key] of [['font-main','family'],['font-island','islandFont'],['font-nickname','nicknameFont']]){
+ $(id).addEventListener('change',async e=>{state.typography[key]=e.target.value;persist();const seq=++fontRequest;await ensureFonts();if(seq===fontRequest)scheduleRender()});
+}
+for(const [id,key] of [['island','islandSize'],['nickname','nicknameSize'],['body','bodySize']]){
+ $('size-'+id).addEventListener('input',e=>{state.typography[key]=Number(e.target.value);$('size-'+id+'-value').textContent=e.target.value+'px';persist()});
 }
 $('pattern-kind').addEventListener('change',e=>{state.pattern.kind=e.target.value;syncPatternUI();persist()});
 $('pattern-area').addEventListener('change',e=>{state.pattern.area=e.target.value;persist()});
@@ -191,7 +252,7 @@ $('reset-colors').addEventListener('click',()=>{for(const key of COLOR_KEYS)stat
 FIELD_KEYS.forEach(k=>$(k).addEventListener('input',e=>{state[k]=e.target.value;persist()}));
 document.querySelectorAll('[data-theme]').forEach(b=>b.addEventListener('click',()=>{state.theme=b.dataset.theme;syncTheme();persist()}));
 function syncTheme(){document.querySelectorAll('[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===state.theme)));const p=currentPalette();document.documentElement.style.setProperty('--bg',p.outer);document.documentElement.style.setProperty('--text',p.ink);document.documentElement.style.setProperty('--border',p.line);document.documentElement.style.setProperty('--soft',p.soft);document.documentElement.style.setProperty('--accent',p.accent);document.documentElement.style.setProperty('--focus',p.accent);const primary=document.querySelector('.btn.primary');primary.style.background=p.accent;primary.style.borderColor=p.accent;syncColorUI()}
-for(const mode of ['cover','avatar']){$(mode+'-file').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(!file.type.startsWith('image/')&&!/\.(jpg|jpeg|png|webp|gif|heic|heif)$/i.test(file.name)){status('이미지 파일을 골라 주세요.');return}try{const raw=await readFileAsDataURL(file);const img=await decodeImage(raw);const max=mode==='cover'?2100:1000;const scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.naturalWidth*scale));c.height=Math.max(1,Math.round(img.naturalHeight*scale));const t=c.getContext('2d');t.fillStyle='#ffffff';t.fillRect(0,0,c.width,c.height);t.drawImage(img,0,0,c.width,c.height);const processed=c.toDataURL('image/jpeg',0.88);state.crop[mode]={x:50,y:50,zoom:1};updateCropUI(mode);await setPhoto(mode,processed);persist();status('사진이 적용됐어요!')}catch(err){status('이 사진은 지원되지 않는 형식이에요. JPG/PNG를 이용해 주세요.')}finally{e.target.value=''}});
+for(const mode of ['avatar']){$(mode+'-file').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(!file.type.startsWith('image/')&&!/\.(jpg|jpeg|png|webp|gif|heic|heif)$/i.test(file.name)){status('이미지 파일을 골라 주세요.');return}try{const raw=await readFileAsDataURL(file);const img=await decodeImage(raw);const max=1000;const scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.naturalWidth*scale));c.height=Math.max(1,Math.round(img.naturalHeight*scale));const t=c.getContext('2d');t.fillStyle='#ffffff';t.fillRect(0,0,c.width,c.height);t.drawImage(img,0,0,c.width,c.height);const processed=c.toDataURL('image/jpeg',0.88);state.crop[mode]={x:50,y:50,zoom:1};updateCropUI(mode);await setPhoto(mode,processed);persist();status('사진이 적용됐어요!')}catch(err){status('이 사진은 지원되지 않는 형식이에요. JPG/PNG를 이용해 주세요.')}finally{e.target.value=''}});
 }
 function readFileAsDataURL(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
 document.querySelectorAll('[data-crop]').forEach(input=>input.addEventListener('input',()=>{const {crop,prop}=input.dataset;state.crop[crop][prop]=Number(input.value);persist()}));
@@ -200,19 +261,23 @@ document.querySelectorAll('[data-reset-crop]').forEach(btn=>btn.addEventListener
 $('to-editor').addEventListener('click',()=>{$('editor-title').scrollIntoView({behavior:'smooth',block:'start'})});
 function fileName(suffix){const base=(state.island.trim()||state.nickname.trim()||'나의섬').replace(/[\\/:*?"<>|\s]+/g,'_').slice(0,28);return `모동숲_트친소_${base}_${Math.floor(100000+Math.random()*900000)}.${suffix}`}
 function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),20000)}
-$('download').addEventListener('click',()=>{const btn=$('download');btn.disabled=true;btn.textContent='PNG 생성 중…';try{draw();canvas.toBlob(blob=>{btn.disabled=false;btn.textContent='PNG 이미지 저장하기';if(!blob){status('저장에 실패했어요. 다른 브라우저에서 다시 시도해 주세요.');return}downloadBlob(blob,fileName('png'));status('PNG 이미지가 저장됐어요!')},'image/png')}catch(e){btn.disabled=false;btn.textContent='PNG 이미지 저장하기';status('저장에 실패했어요.')}});
+$('download').addEventListener('click',async()=>{const btn=$('download');btn.disabled=true;btn.textContent='PNG 생성 중…';try{await ensureFonts();draw();canvas.toBlob(blob=>{btn.disabled=false;btn.textContent='PNG 이미지 저장하기';if(!blob){status('저장에 실패했어요. 다른 브라우저에서 다시 시도해 주세요.');return}downloadBlob(blob,fileName('png'));status('PNG 이미지가 저장됐어요!')},'image/png')}catch(e){btn.disabled=false;btn.textContent='PNG 이미지 저장하기';status('저장에 실패했어요.')}});
 async function saveBackup(){try{const result={format:'island-friends-maker',version:1,data:state,images:photoData};const blob=new Blob([JSON.stringify(result)],{type:'application/json'});downloadBlob(blob,fileName('json'));status('설정 파일을 저장했어요. 다른 기기에서도 불러올 수 있어요.')}catch(e){status('설정 저장에 실패했어요.')}}
-$('backup').addEventListener('click',saveBackup);$('download-backup').addEventListener('click',saveBackup);$('restore').addEventListener('click',()=>$('restore-file').click());$('restore-file').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>24*1024*1024)throw new Error('size');const o=JSON.parse(await f.text());if(o?.format!=='island-friends-maker'||!o.data)throw new Error('format');state=mergeState(o.data);for(const k of ['cover','avatar']){let img=o.images?.[k];if(typeof img!=='string'||!/^data:image\/(png|jpeg|webp|gif);base64,/i.test(img))img=null;await setPhoto(k,img)}syncUI();syncTheme();persist();status('설정을 모두 불러왔어요!')}catch(err){status('이 메이커에서 저장한 JSON 파일인지 확인해 주세요.')}finally{e.target.value=''}});
-$('reset').addEventListener('click',async()=>{if(!confirm('작성한 내용을 초기화할까요? 저장한 설정을 먼저 백업하는 걸 추천해요.'))return;state=mergeState({});await setPhoto('cover',null);await setPhoto('avatar',null);syncUI();syncTheme();persist();status('처음 상태로 돌아왔어요.')});
+$('backup').addEventListener('click',saveBackup);$('download-backup').addEventListener('click',saveBackup);$('restore').addEventListener('click',()=>$('restore-file').click());$('restore-file').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>24*1024*1024)throw new Error('size');const o=JSON.parse(await f.text());if(o?.format!=='island-friends-maker'||!o.data)throw new Error('format');state=mergeState(o.data);for(const k of ['avatar']){let img=o.images?.[k];if(typeof img!=='string'||!/^data:image\/(png|jpeg|webp|gif);base64,/i.test(img))img=null;await setPhoto(k,img)}syncUI();syncTheme();persist();await ensureFonts();status('설정을 모두 불러왔어요!')}catch(err){status('이 메이커에서 저장한 JSON 파일인지 확인해 주세요.')}finally{e.target.value=''}});
+$('reset').addEventListener('click',async()=>{if(!confirm('작성한 내용을 초기화할까요? 저장한 설정을 먼저 백업하는 걸 추천해요.'))return;state=mergeState({});await setPhoto('avatar',null);syncUI();syncTheme();persist();void ensureFonts();status('처음 상태로 돌아왔어요.')});
 // 실시간 미리보기와 PNG는 동일한 canvas 렌더링을 사용합니다.
 function rr(x,y,w,h,r){const q=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+q,y);ctx.arcTo(x+w,y,x+w,y+h,q);ctx.arcTo(x+w,y+h,x,y+h,q);ctx.arcTo(x,y+h,x,y,q);ctx.arcTo(x,y,x+w,y,q);ctx.closePath()}
 function rect(x,y,w,h,r,fill,stroke,lw=2){rr(x,y,w,h,r);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.lineWidth=lw;ctx.strokeStyle=stroke;ctx.stroke()}}
 function line(x,y,x2,y2,color,width=2){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x2,y2);ctx.lineWidth=width;ctx.strokeStyle=color;ctx.stroke()}
 function circle(x,y,r,fill,stroke,lw=2){ctx.beginPath();ctx.arc(x,y,r,0,2*Math.PI);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw;ctx.stroke()}}
-const FONT="'Apple SD Gothic Neo','Malgun Gothic','Noto Sans CJK KR',sans-serif";
-function font(size,weight=600){ctx.font=`${weight} ${size}px ${FONT}`}
-function text(str,x,y,size,color,weight=600,align='left'){ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';font(size,weight);ctx.fillText(String(str),x,y)}
-function fitted(value,x,y,maxWidth,size,color,weight=700,minSize=21,align='left'){let t=String(value);font(size,weight);while(size>minSize&&ctx.measureText(t).width>maxWidth){size--;font(size,weight)}if(ctx.measureText(t).width>maxWidth){const a=Array.from(t);while(a.length>1&&ctx.measureText(a.join('')+'…').width>maxWidth)a.pop();t=a.join('')+'…'}text(t,x,y,size,color,weight,align)}
+function font(size,weight=600,fontKey='inherit'){ctx.font=`${weight} ${size}px ${fontFamily(fontKey)}`}
+function text(str,x,y,size,color,weight=600,align='left',fontKey='inherit'){ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';font(size,weight,fontKey);ctx.fillText(String(str),x,y)}
+function fitted(value,x,y,maxWidth,size,color,weight=700,minSize=21,align='left',fontKey='inherit'){
+ let t=String(value);font(size,weight,fontKey);
+ while(size>minSize&&ctx.measureText(t).width>maxWidth){size--;font(size,weight,fontKey)}
+ if(ctx.measureText(t).width>maxWidth){const a=Array.from(t);while(a.length>1&&ctx.measureText(a.join('')+'…').width>maxWidth)a.pop();t=a.join('')+'…'}
+ text(t,x,y,size,color,weight,align,fontKey);
+}
 function wrapLines(value,maxWidth,maxLines,size,weight=600){const result=[];let current='';font(size,weight);for(const c of Array.from(String(value))){if(c==='\r')continue;if(c==='\n'){result.push(current);current='';continue}if(ctx.measureText(current+c).width>maxWidth&&current){result.push(current);current=''}current+=c}if(current||!result.length)result.push(current);if(result.length>maxLines){result.length=maxLines;let end=result[maxLines-1];while(end&&ctx.measureText(end+'…').width>maxWidth)end=Array.from(end).slice(0,-1).join('');result[maxLines-1]=end+'…'}return result}
 function multiline(value,x,y,maxWidth,maxLines,size,lineHeight,color,weight=600){wrapLines(value,maxWidth,maxLines,size,weight).forEach((str,i)=>text(str,x,y+i*lineHeight,size,color,weight))}
 function cropImage(img,x,y,w,h,settings,radius=0){if(!img)return;ctx.save();rr(x,y,w,h,radius);ctx.clip();const iw=img.naturalWidth,ih=img.naturalHeight,scale=Math.max(w/iw,h/ih)*(settings.zoom||1),dw=iw*scale,dh=ih*scale;const left=x-(dw-w)*(settings.x/100),top=y-(dh-h)*(settings.y/100);ctx.drawImage(img,left,top,dw,dh);ctx.restore()}
@@ -276,60 +341,80 @@ function placeholder(x,y,w,h,p,kind){
   text('ADD A FAVORITE SCREENSHOT',x+57,y+h-32,19,p.muted,550);
  }else{
   rect(x+25,y+27,w-50,h-54,18,null,p.line,2);
-  text('02',x+w*.5,y+h*.53,77,p.muted,800,'center');
-  text('MY CHARACTER',x+w*.5,y+h-62,21,p.ink,800,'center');
-  text('PHOTO / 02',x+w*.5,y+h-31,17,p.muted,600,'center');
+  text('MY CHARACTER',x+w*.5,y+h*.48,22,p.ink,800,'center');
+  text('ADD YOUR PHOTO',x+w*.5,y+h*.55,18,p.muted,600,'center');
  }
  ctx.restore();
 }
-function caps(value,x,y,p,align='left'){text(value,x,y,20,p.accent,800,align)}
-function pill(value,x,y,maxW,p,filled=false){let label=String(value);font(24,700);let w=Math.min(maxW,Math.max(107,ctx.measureText(label).width+54));if(w<75)return 0;const available=w-42;while(ctx.measureText(label).width>available&&label.length>1){label=Array.from(label).slice(0,-1).join('');font(24,700)}if(label!==String(value))label=Array.from(label).slice(0,-1).join('')+'…';rect(x,y,w,51,26,filled?p.soft:p.paper,p.line,1.6);text(label,x+22,y+35,23,p.ink,650);return w}
-function chips(items,x,y,maxWidth,p,maxRows=2){const values=items.map(v=>String(v).trim()).filter(Boolean);let cx=x,cy=y,row=0;let shown=0;for(const value of values){font(23,650);const desired=Math.max(107,Math.min(maxWidth,ctx.measureText(value).width+55));if(cx+desired>x+maxWidth&&cx>x){row++;cx=x;cy+=63}if(row>=maxRows)break;const w=pill(value,cx,cy,Math.min(desired,maxWidth),p);cx+=w+12;shown++}if(shown<values.length){const more=`+${values.length-shown}`;if(cx+91>x+maxWidth){if(row+1<maxRows){row++;cy+=63;cx=x}else{cx=x+maxWidth-86}}pill(more,cx,cy,86,p)} }
-function meta(label,value,x,y,w,p){caps(label,x,y,p);fitted(value,x,y+44,w-10,29,p.ink,650,18)}
+function caps(value,x,y,p,align='left'){text(value,x,y,Math.round(state.typography.bodySize*0.83),p.accent,800,align)}
+function pill(value,x,y,maxW,p,filled=false){
+ let label=String(value);const fs=state.typography.bodySize;
+ font(fs,700);
+ let w=Math.min(maxW,Math.max(107,ctx.measureText(label).width+54));if(w<75)return 0;
+ const available=w-42;
+ while(ctx.measureText(label).width>available&&label.length>1){label=Array.from(label).slice(0,-1).join('');font(fs,700)}
+ if(label!==String(value))label=Array.from(label).slice(0,-1).join('')+'…';
+ rect(x,y,w,51,26,filled?p.soft:p.paper,p.line,1.6);
+ text(label,x+22,y+26+fs*.37,fs,p.ink,650);return w;
+}
+function chips(items,x,y,maxWidth,p,maxRows=2){
+ const values=items.map(v=>String(v).trim()).filter(Boolean);let cx=x,cy=y,row=0,shown=0;
+ for(const value of values){font(state.typography.bodySize,650);const desired=Math.max(107,Math.min(maxWidth,ctx.measureText(value).width+55));
+ if(cx+desired>x+maxWidth&&cx>x){row++;cx=x;cy+=63}
+ if(row>=maxRows)break;
+ const w=pill(value,cx,cy,Math.min(desired,maxWidth),p);cx+=w+12;shown++}
+ if(shown<values.length){const more=`+${values.length-shown}`;if(cx+91>x+maxWidth){if(row+1<maxRows){row++;cy+=63;cx=x}else{cx=x+maxWidth-86}}pill(more,cx,cy,86,p)}
+}
+function meta(label,value,x,y,w,p){caps(label,x,y,p);fitted(value,x,y+48,w-10,Math.min(34,state.typography.bodySize+5),p.ink,650,18)}
 function draw(){
  const p=currentPalette();ctx.clearRect(0,0,WIDTH,HEIGHT);
  ctx.fillStyle=p.outer;ctx.fillRect(0,0,WIDTH,HEIGHT);
  rect(32,32,1136,1536,34,p.paper,p.line,2);
  if(state.pattern.area==='card'||state.pattern.area==='both')drawPattern(32,32,1136,1536,34);
  rect(76,92,12,48,12,p.accent);
- caps('FRIENDS  /  PROFILE CARD',105,117,p);
- text('01 — INTRODUCTION',1124,117,20,p.muted,650,'right');
- text('HELLO, FRIEND.',76,218,78,p.ink,850);
- text('모여봐요 동물의 숲  ·  트친소 프로필',79,259,24,p.muted,550);
- line(76,285,1124,285,p.line);
- const cy=310,ch=395;
- if(photoImages.cover)cropImage(photoImages.cover,76,cy,704,ch,state.crop.cover,28);else placeholder(76,cy,704,ch,p,'cover');
- if(photoImages.avatar)cropImage(photoImages.avatar,805,cy,319,ch,state.crop.avatar,28);else placeholder(805,cy,319,ch,p,'avatar');
- text('01  /  MY ISLAND',78,746,20,p.muted,700);
- text('02  /  CHARACTER',806,746,20,p.muted,700);
- line(76,772,1124,772,p.line);
- caps('01  ABOUT ME',78,813,p);
- fitted(state.nickname.trim()||'새로운 섬 친구',76,898,750,62,p.ink,800,28);
+ caps('FRIENDS / PROFILE CARD',105,117,p);
+ text('ACNH · PROFILE',1124,117,19,p.muted,650,'right');
+ text('HELLO, FRIEND.',76,213,72,p.ink,800);
+ text('모여봐요 동물의 숲  ·  트친소 프로필',79,257,Math.round(state.typography.bodySize),p.muted,550);
+ line(76,287,1124,287,p.line);
+ // 사진은 대표 캐릭터 한 장만 사용합니다. 왼쪽 영역은 두 이름을 같은 크기로 보여줍니다.
+ const x=78, infoW=699, avatarX=805, avatarY=314, avatarW=319, avatarH=407;
+ caps('01  MY ISLAND',x,352,p);
+ const island=state.island.trim()||'이름 없는 섬';
+ fitted(island.endsWith('섬')?island:island+'섬',x,458,infoW,state.typography.islandSize,p.ink,750,32,'left',state.typography.islandFont);
+ line(x,488,x+infoW,488,p.line,1.8);
+ caps('02  RESIDENT REPRESENTATIVE',x,535,p);
+ fitted(state.nickname.trim()||'주민대표 이름',x,645,infoW,state.typography.nicknameSize,p.ink,750,32,'left',state.typography.nicknameFont);
  const handle=state.handle.trim().replace(/^@+/, '');
- if(handle)fitted('X  @'+handle,1124,889,296,22,p.accent,650,16,'right');
- const island=(state.island.trim()||'이름 없는 섬');
- fitted(island.endsWith('섬')?island:island+'섬',78,943,820,27,p.muted,600,20);
- line(76,978,1124,978,p.line);
+ if(handle)fitted('X  @'+handle,x,698,infoW,Math.min(29,state.typography.bodySize+2),p.accent,700,17);
+ if(photoImages.avatar)cropImage(photoImages.avatar,avatarX,avatarY,avatarW,avatarH,state.crop.avatar,28);
+ else placeholder(avatarX,avatarY,avatarW,avatarH,p,'avatar');
+ line(76,760,1124,760,p.line);
+ caps('03  ISLAND INFORMATION',78,806,p);
  const cells=[['FRUIT',state.fruit==='미정'?'아직 몰라요':state.fruit],['ISLAND STYLE',state.vibe],['PLAY TIME',state.playtime],['DREAM ADDRESS',state.dream.trim()||'미공개']];
- for(let i=0;i<4;i++){const x=78+i*262;meta(cells[i][0],cells[i][1],x,1017,246,p);if(i!==3)line(x+247,1000,x+247,1066,p.line,1.5)}
- line(76,1084,1124,1084,p.line);
- caps('02  FAVORITE VILLAGERS',78,1125,p);
- const residents=[state.fav1,state.fav2,state.fav3].map(x=>x.trim()).filter(Boolean);
- chips(residents.length?residents:['좋아하는 주민을 적어주세요'],78,1147,1044,p,1);
- line(76,1220,1124,1220,p.line);
- caps('03  LET’S PLAY TOGETHER',78,1262,p);
- const activities=state.activities.slice(0,6);
- chips(activities.length?activities:['함께 놀 친구를 찾아요'],78,1281,1044,p,2);
- // 짧은 한마디를 위한 하단 코멘트 박스
- rect(76,1410,1048,104,28,p.soft);
- caps('MESSAGE  /',99,1442,p);
+ const cardW=508,cardH=102;
+ for(let i=0;i<4;i++){
+  const xx=78+(i%2)*538,yy=828+Math.floor(i/2)*120;
+  rect(xx,yy,cardW,cardH,22,p.soft,p.line,1.7);
+  meta(cells[i][0],cells[i][1],xx+20,yy+31,cardW-40,p);
+ }
+ line(76,1068,1124,1068,p.line);
+ caps('04  FAVORITE VILLAGERS',78,1109,p);
+ const residents=[state.fav1,state.fav2,state.fav3].map(v=>v.trim()).filter(Boolean);
+ chips(residents.length?residents:['좋아하는 주민을 적어주세요'],78,1130,1044,p,1);
+ line(76,1201,1124,1201,p.line);
+ caps('05  LET’S PLAY TOGETHER',78,1243,p);
+ chips(state.activities.length?state.activities:['함께 놀 친구를 찾아요'],78,1265,1044,p,2);
+ rect(76,1406,1048,108,28,p.soft,p.line,1.4);
+ caps('MESSAGE  /',99,1440,p);
  const msg=state.message.trim()||'함께 섬 생활할 친구를 기다리고 있어요!';
- multiline(msg,99,1476,987,2,24,29,p.ink,650);
+ multiline(msg,99,1475,987,2,state.typography.bodySize,29,p.ink,650);
  line(76,1540,1124,1540,p.line);
  text('MADE FOR NEW FRIENDS',77,1557,13,p.muted,650);
  text('ACNH  /  UNOFFICIAL FAN TEMPLATE',1124,1557,13,p.muted,650,'right');
 }
-async function init(){syncUI();syncTheme();draw();const [cover,avatar]=await Promise.all([photoLoad('cover'),photoLoad('avatar')]);if(cover)await setPhoto('cover',cover,false);if(avatar)await setPhoto('avatar',avatar,false);draw()}
+async function init(){syncUI();syncTheme();draw();const avatar=await photoLoad('avatar');if(avatar)await setPhoto('avatar',avatar,false);await ensureFonts();draw()}
+if(document.fonts){document.fonts.ready.then(()=>scheduleRender()).catch(()=>{});document.fonts.addEventListener?.('loadingdone',scheduleRender)}
 void init();
 })();</script>
 </body>
