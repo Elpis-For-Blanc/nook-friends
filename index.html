@@ -72,6 +72,8 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 <button aria-pressed="false" class="theme" data-theme="pink" type="button"><span class="swatch" style="background:#f8d6e2"></span>블러쉬</button>
 <button aria-pressed="false" class="theme" data-theme="blue" type="button"><span class="swatch" style="background:#a9c6d8"></span>파우더 블루</button>
 <button aria-pressed="false" class="theme" data-theme="mono" type="button"><span class="swatch" style="background:#767677"></span> 모노</button></div></div>
+<div class="field wide" style="margin-top:19px"><label for="headerText">카드 상단 큰 문구 (선택)</label><input data-field="headerText" id="headerText" maxlength="42" placeholder="예: LET’S BE FRIENDS!"/></div>
+<p class="hint">원하는 문구를 직접 입력할 수 있어요. 입력칸을 비우면 상단 문구가 표시되지 않아요.</p>
 <div class="section"><h3><span class="step">2</span> 직접 색상 꾸미기</h3>
 <div class="color-grid">
 <div class="color-item"><label for="color-outer">바깥 배경색</label><input data-color-key="outer" id="color-outer" type="color"/></div>
@@ -154,7 +156,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 const WIDTH=1200,HEIGHT=1600;
 const canvas=document.getElementById('card');const ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id);
-const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],typography:{family:'round',islandFont:'inherit',nicknameFont:'inherit',islandSize:70,nicknameSize:70,bodySize:24},customColors:{outer:'',paper:'',line:'',accent:'',soft:'',photo:'',ink:'',muted:''},pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{avatar:{x:50,y:50,zoom:1}}};
+const DEFAULTS={theme:'pink',headerText:'HELLO, FRIEND.',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],typography:{family:'round',islandFont:'inherit',nicknameFont:'inherit',islandSize:70,nicknameSize:70,bodySize:24},customColors:{outer:'',paper:'',line:'',accent:'',soft:'',photo:'',ink:'',muted:''},pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{avatar:{x:50,y:50,zoom:1}}};
 const ACTS=['섬 구경','사진 찍기','주민 수다','통신 놀이','아이템 나눔','과일 교환','마이디자인','섬 꾸미기','일상 교류','느긋한 소통'];
 const PATTERN_TYPES=['none','dots','hearts','stars','flowers','crosses'];
 const PATTERN_AREAS=['card','photos','both'];
@@ -165,7 +167,7 @@ pink:{outer:'#fff9fc',paper:'#ffffff',ink:'#534149',muted:'#b898a5',accent:'#f0b
 blue:{outer:'#eef3f6',paper:'#ffffff',ink:'#31424c',muted:'#81939d',accent:'#7196aa',soft:'#e7f0f4',line:'#dce9ee',photo:'#e0edf3'},
 mono:{outer:'#ececeb',paper:'#ffffff',ink:'#242629',muted:'#8a8c8d',accent:'#5c5f63',soft:'#f0f0ef',line:'#dedfdd',photo:'#e8e8e7'}
 };
-const FIELD_KEYS=['nickname','island','handle','fruit','vibe','playtime','dream','fav1','fav2','fav3','message'];
+const FIELD_KEYS=['headerText','nickname','island','handle','fruit','vibe','playtime','dream','fav1','fav2','fav3','message'];
 const COLOR_KEYS=['outer','paper','line','accent','soft','photo','ink','muted'];
 const FONT_PRESETS={sans:'"Noto Sans KR","Malgun Gothic",sans-serif',round:'"Jua","NanumSquareRound","Malgun Gothic",sans-serif',gowun:'"Gowun Dodum","Nanum Gothic",sans-serif',nanum:'"Nanum Gothic","Malgun Gothic",sans-serif',gaegu:'"Gaegu","UnPenheulim",sans-serif',serif:'"Nanum Myeongjo",serif',batang:'"Gowun Batang","Nanum Myeongjo",serif'};
 const FONT_KEYS=Object.keys(FONT_PRESETS);
@@ -374,7 +376,8 @@ function draw(){
  rect(76,92,12,48,12,p.accent);
  caps('FRIENDS / PROFILE CARD',105,117,p);
  text('ACNH · PROFILE',1124,117,19,p.muted,650,'right');
- text('HELLO, FRIEND.',76,213,72,p.ink,800);
+ const headerText=state.headerText.trim();
+ if(headerText)fitted(headerText,76,213,1048,72,p.ink,800,26);
  text('모여봐요 동물의 숲  ·  트친소 프로필',79,257,Math.round(state.typography.bodySize),p.muted,550);
  line(76,287,1124,287,p.line);
  // 사진은 대표 캐릭터 한 장만 사용합니다. 왼쪽 영역은 두 이름을 같은 크기로 보여줍니다.
