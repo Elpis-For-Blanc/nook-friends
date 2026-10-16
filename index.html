@@ -9,7 +9,7 @@
 <meta content="깔끔한 미니멀 프로필 카드로 만드는 모동숲 트친소표. 사진과 소개를 넣어 PNG로 저장해요." name="description"/>
 <title>ACNH PROFILE | 미니멀 트친소표 메이커</title>
 <style>
-:root{color-scheme:light;--bg:#fdf8fb;--text:#40383d;--paper:#ffffff;--soft:#fff6fa;--border:#f0e3ea;--accent:#e2a8bb;--focus:#ebb8c8}
+:root{color-scheme:light;--bg:#fffafd;--text:#40383d;--paper:#ffffff;--soft:#fff7fb;--border:#f4e4ec;--accent:#f0b7cb;--focus:#f5c7d7}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.45;font-size:14px;-webkit-font-smoothing:antialiased}
@@ -30,7 +30,16 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 .pattern-color-wrap input[type=color]::-webkit-color-swatch-wrapper{padding:0}
 .pattern-color-wrap input[type=color]::-webkit-color-swatch{border:0;border-radius:10px}
 .pattern-color-wrap input[type=color]::-moz-color-swatch{border:0;border-radius:10px}
-@media(max-width:550px){.pattern-settings{padding:12px;gap:15px 12px;border-radius:18px}}
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.color-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:#fff8fb;border:1px solid #f3e3eb;border-radius:18px}
+.color-item label{font-size:12px;color:#74666d;font-weight:750}
+.color-item input[type=color]{background:#fff;cursor:pointer;width:54px;height:38px;border:1px solid #f0dce5;border-radius:15px;padding:4px;flex-shrink:0}
+.color-item input[type=color]::-webkit-color-swatch-wrapper{padding:0}
+.color-item input[type=color]::-webkit-color-swatch{border:0;border-radius:10px}
+.color-item input[type=color]::-moz-color-swatch{border:0;border-radius:10px}
+.color-reset-wrap{margin-top:12px}
+@media(max-width:550px){.pattern-settings,.color-grid{padding:12px;gap:15px 12px;border-radius:18px}}
+@media(max-width:700px){.color-grid{grid-template-columns:1fr}}
 .preview{position:sticky;top:20px;padding:25px}.preview-top{margin-bottom:17px}.preview-wrap{padding:14px;background:#fff6fa;border:1px solid #f3e4ea;border-radius:24px;overflow:hidden}.preview-wrap canvas{width:100%;height:auto;display:block;max-width:620px;margin:0 auto;background:white;box-shadow:0 12px 28px #d8aebe1a;border-radius:18px}.action-group{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.btn{min-height:47px;padding:10px 14px;border:1px solid #f0e2e8;background:#fff;color:#74666d;border-radius:999px;font-size:12px;font-weight:750;letter-spacing:-.01em}.btn.primary{border-color:#d89db0;background:#d89db0;color:white;font-size:13px;box-shadow:0 10px 22px #ebbfd04f}.btn.primary:hover{filter:brightness(.92)}.btn:disabled{opacity:.6;cursor:wait}.btn.full{grid-column:1/-1}.inline-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.inline-actions .btn{min-width:94px;flex:1;font-size:11px}.notice{border-top:1px solid #f2e4ea;color:#ab9aa2;font-size:11px;line-height:1.7;padding-top:14px;margin:14px 0 0}.status{font-size:12px;color:#b57790;font-weight:700;min-height:17px;margin:9px 0 0}.mini-mark{font-size:10px;color:#aaa7a3;text-align:center;margin-top:12px}.footer{color:#b3a0a8;font-size:12px;text-align:center;margin-top:23px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:1050px){.layout{grid-template-columns:minmax(0,1fr);max-width:680px;margin:0 auto}.preview{position:static;grid-row:1}.editor{grid-row:2}.page-head{max-width:680px;margin:0 auto 24px}.head-note{display:none}}
 @media(max-width:550px){.page{padding:24px 12px 45px}.page-head{padding-bottom:20px}.page-head h1{font-size:34px}.page-head p{font-size:13px}.editor,.preview{padding:18px}.preview-wrap{padding:7px}.theme-picker{gap:5px}.theme{font-size:9px;letter-spacing:-.04em;padding:10px 1px}.swatch{width:23px;height:23px}.section{margin-top:21px;padding-top:20px}.fields{gap:10px}.field input:not([type=file]):not([type=range]),.field select{padding:10px 8px;font-size:12px}.checks{gap:7px}.check{padding:9px 10px;font-size:11px}}
@@ -46,10 +55,24 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 <div class="section" style="margin-top:13px;border:0;padding-top:6px"><h3><span class="step">1</span> 포인트 컬러</h3><div class="theme-picker" id="themes">
 <button aria-pressed="true" class="theme" data-theme="mint" type="button"><span class="swatch" style="background:#aec2b5"></span>세이지</button>
 <button aria-pressed="false" class="theme" data-theme="cream" type="button"><span class="swatch" style="background:#d4c1a7"></span>크림</button>
-<button aria-pressed="false" class="theme" data-theme="pink" type="button"><span class="swatch" style="background:#f3cdda"></span>블러쉬</button>
+<button aria-pressed="false" class="theme" data-theme="pink" type="button"><span class="swatch" style="background:#f8d6e2"></span>블러쉬</button>
 <button aria-pressed="false" class="theme" data-theme="blue" type="button"><span class="swatch" style="background:#a9c6d8"></span>파우더 블루</button>
 <button aria-pressed="false" class="theme" data-theme="mono" type="button"><span class="swatch" style="background:#767677"></span> 모노</button></div></div>
-<div class="section"><h3><span class="step">2</span> 배경 무늬 꾸미기</h3>
+<div class="section"><h3><span class="step">2</span> 직접 색상 꾸미기</h3>
+<div class="color-grid">
+<div class="color-item"><label for="color-outer">바깥 배경색</label><input data-color-key="outer" id="color-outer" type="color"/></div>
+<div class="color-item"><label for="color-paper">카드 바탕색</label><input data-color-key="paper" id="color-paper" type="color"/></div>
+<div class="color-item"><label for="color-line">테두리 / 선 색</label><input data-color-key="line" id="color-line" type="color"/></div>
+<div class="color-item"><label for="color-accent">포인트 색</label><input data-color-key="accent" id="color-accent" type="color"/></div>
+<div class="color-item"><label for="color-soft">보조 박스색</label><input data-color-key="soft" id="color-soft" type="color"/></div>
+<div class="color-item"><label for="color-photo">빈 사진칸 색</label><input data-color-key="photo" id="color-photo" type="color"/></div>
+<div class="color-item"><label for="color-ink">기본 글자색</label><input data-color-key="ink" id="color-ink" type="color"/></div>
+<div class="color-item"><label for="color-muted">보조 글자색</label><input data-color-key="muted" id="color-muted" type="color"/></div>
+</div>
+<div class="inline-actions color-reset-wrap"><button class="btn" id="reset-colors" type="button">테마 색으로 되돌리기</button></div>
+<p class="hint">테마를 고른 뒤 원하는 항목만 직접 바꿀 수 있어요. 직접 지정한 색은 테마보다 우선 적용돼요.</p>
+</div>
+<div class="section"><h3><span class="step">3</span> 배경 무늬 꾸미기</h3>
 <div class="fields">
 <div class="field"><label for="pattern-kind">무늬 종류</label><select id="pattern-kind"><option value="none">무늬 없음</option><option value="dots">동글 도트</option><option value="hearts">작은 하트</option><option value="stars">반짝 별</option><option value="flowers">미니 꽃</option><option value="crosses">작은 십자</option></select></div>
 <div class="field"><label for="pattern-area">무늬 위치</label><select id="pattern-area"><option value="card">카드 배경</option><option value="photos">빈 사진 칸</option><option value="both">카드 + 빈 사진 칸</option></select></div>
@@ -62,31 +85,31 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 </div>
 <p class="hint">무늬를 선택하면 크기, 무늬 사이 간격, 진하기, 색상을 조절할 수 있어요. 사진 칸의 큰 원 장식은 제거했어요. 미리보기와 PNG 저장에 동일하게 적용돼요.</p>
 </div>
-<div class="section"><h3><span class="step">3</span> 내 소개</h3><div class="fields">
+<div class="section"><h3><span class="step">4</span> 내 소개</h3><div class="fields">
 <div class="field"><label for="nickname">닉네임</label><input data-field="nickname" id="nickname" maxlength="18" placeholder="예: 모래"/></div>
 <div class="field"><label for="island">섬 이름</label><input data-field="island" id="island" maxlength="20" placeholder="예: 별사탕"/></div>
 <div class="field wide"><label for="handle">X 아이디 (선택)</label><input data-field="handle" id="handle" maxlength="40" placeholder="@ 없이 입력해도 돼요"/></div>
 </div></div>
-<div class="section"><h3><span class="step">4</span> 우리 섬 소개</h3><div class="fields">
+<div class="section"><h3><span class="step">5</span> 우리 섬 소개</h3><div class="fields">
 <div class="field"><label for="fruit">대표 과일</label><select data-field="fruit" id="fruit"><option value="미정">아직 몰라요</option><option value="🍎 사과">🍎 사과</option><option value="🍐 배">🍐 배</option><option value="🍒 체리">🍒 체리</option><option value="🍑 복숭아">🍑 복숭아</option><option value="🍊 오렌지">🍊 오렌지</option></select></div>
 <div class="field"><label for="vibe">섬 분위기</label><select data-field="vibe" id="vibe"><option>자연풍</option><option>동화풍</option><option>시골풍</option><option>도시풍</option><option>일본풍</option><option>바닷가풍</option><option>공주풍</option><option>빈티지풍</option><option>테마 고민 중</option><option>그때그때 달라요</option></select></div>
 <div class="field"><label for="playtime">접속 시간대</label><select data-field="playtime" id="playtime"><option>그때그때 달라요</option><option>오전</option><option>오후</option><option>저녁</option><option>새벽</option><option>주말 위주</option><option>매일 접속</option></select></div>
 <div class="field"><label for="dream">꿈번지 (선택)</label><input data-field="dream" id="dream" maxlength="25" placeholder="DA-0000-0000-0000"/></div>
 </div></div>
-<div class="section"><h3><span class="step">5</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
+<div class="section"><h3><span class="step">6</span> 좋아하는 주민 (최대 3명)</h3><div class="fields">
 <div class="field"><label for="fav1">첫 번째</label><input data-field="fav1" id="fav1" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field"><label for="fav2">두 번째</label><input data-field="fav2" id="fav2" maxlength="14" placeholder="주민 이름"/></div>
 <div class="field wide"><label for="fav3">세 번째</label><input data-field="fav3" id="fav3" maxlength="14" placeholder="주민 이름"/></div>
 </div></div>
-<div class="section"><h3><span class="step">6</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
-<div class="section"><h3><span class="step">7</span> 섬 사진과 캐릭터</h3><div class="upload-grid">
+<div class="section"><h3><span class="step">7</span> 함께 하고 싶은 것</h3><div class="checks" id="activity-list"></div><p class="hint">여러 개 선택할 수 있어요. 트친소표에는 최대 6개가 표시돼요.</p></div>
+<div class="section"><h3><span class="step">8</span> 섬 사진과 캐릭터</h3><div class="upload-grid">
 <div><label class="file-label" for="cover-file"><span>▧</span>섬 사진 넣기<small id="cover-name">선택하지 않음</small><input accept="image/*" id="cover-file" type="file"/></label><button class="remove-file" data-remove="cover" type="button">섬 사진 지우기</button></div>
 <div><label class="file-label" for="avatar-file"><span>◯</span>캐릭터 사진 넣기<small id="avatar-name">선택하지 않음</small><input accept="image/*" id="avatar-file" type="file"/></label><button class="remove-file" data-remove="avatar" type="button">캐릭터 사진 지우기</button></div>
 </div>
 <div class="crop-controls" id="cover-controls"><div class="photo-heading">섬 사진 위치 / 크기 <button class="remove-file" data-reset-crop="cover" type="button">위치 초기화</button></div><div class="range-row"><label for="cover-x">좌우</label><input data-crop="cover" data-prop="x" id="cover-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-y">상하</label><input data-crop="cover" data-prop="y" id="cover-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="cover-zoom">확대</label><input data-crop="cover" data-prop="zoom" id="cover-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
 <div class="crop-controls" id="avatar-controls"><div class="photo-heading">캐릭터 사진 위치 / 크기 <button class="remove-file" data-reset-crop="avatar" type="button">위치 초기화</button></div><div class="range-row"><label for="avatar-x">좌우</label><input data-crop="avatar" data-prop="x" id="avatar-x" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-y">상하</label><input data-crop="avatar" data-prop="y" id="avatar-y" max="100" min="0" step="1" type="range"/></div><div class="range-row"><label for="avatar-zoom">확대</label><input data-crop="avatar" data-prop="zoom" id="avatar-zoom" max="2.5" min="1" step="0.05" type="range"/></div></div>
 <p class="hint">사진을 넣으면 위 조절창에서 보이는 위치와 확대 정도를 바꿀 수 있어요. 사진 없이도 예쁘게 완성돼요.</p></div>
-<div class="section"><h3><span class="step">8</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
+<div class="section"><h3><span class="step">9</span> 전하고 싶은 말</h3><div class="field"><label for="message">한마디 (70자 이내)</label><textarea data-field="message" id="message" maxlength="70" placeholder="함께 섬 구경할 친구를 찾아요!"></textarea></div></div>
 <div class="section"><h3>☁︎ 내 설정 관리</h3><div class="inline-actions"><button class="btn" id="backup" type="button">설정 파일 저장</button><button class="btn" id="restore" type="button">설정 파일 불러오기</button><button class="btn" id="reset" type="button">처음부터</button></div><input accept=".json,application/json" hidden="" id="restore-file" type="file"/><p class="hint">입력 내용과 사진은 현재 브라우저에 자동 저장을 시도해요. 다른 기기로 옮기거나 오래 보관할 땐 ‘설정 파일 저장’을 이용해 주세요.</p></div>
 </section>
 <section aria-label="트친소표 미리보기" class="panel preview">
@@ -103,21 +126,24 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-vis
 const WIDTH=1200,HEIGHT=1600;
 const canvas=document.getElementById('card');const ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id);
-const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{cover:{x:50,y:50,zoom:1},avatar:{x:50,y:50,zoom:1}}};
+const DEFAULTS={theme:'pink',nickname:'',island:'',handle:'',fruit:'미정',vibe:'자연풍',playtime:'그때그때 달라요',dream:'',fav1:'',fav2:'',fav3:'',message:'',activities:['섬 구경','사진 찍기','주민 수다'],customColors:{outer:'',paper:'',line:'',accent:'',soft:'',photo:'',ink:'',muted:''},pattern:{kind:'none',area:'card',size:12,gap:46,opacity:18,color:'#e5afc1'},crop:{cover:{x:50,y:50,zoom:1},avatar:{x:50,y:50,zoom:1}}};
 const ACTS=['섬 구경','사진 찍기','주민 수다','통신 놀이','아이템 나눔','과일 교환','마이디자인','섬 꾸미기','일상 교류','느긋한 소통'];
 const PATTERN_TYPES=['none','dots','hearts','stars','flowers','crosses'];
 const PATTERN_AREAS=['card','photos','both'];
 const PALETTES={
 mint:{outer:'#eef0ed',paper:'#ffffff',ink:'#2b3933',muted:'#7f8e87',accent:'#658674',soft:'#e9efea',line:'#dce4dd',photo:'#e1e8e2'},
 cream:{outer:'#f4f2ef',paper:'#ffffff',ink:'#333330',muted:'#8f8b85',accent:'#9e8c72',soft:'#f2ede6',line:'#e8e2d8',photo:'#ede9e1'},
-pink:{outer:'#fdf6f9',paper:'#ffffff',ink:'#534149',muted:'#aa8f9b',accent:'#e2a8bb',soft:'#fff0f6',line:'#f2dbe5',photo:'#faeaf0'},
+pink:{outer:'#fff9fc',paper:'#ffffff',ink:'#534149',muted:'#b898a5',accent:'#f0b7cb',soft:'#fff4f8',line:'#f7dfe9',photo:'#fff0f5'},
 blue:{outer:'#eef3f6',paper:'#ffffff',ink:'#31424c',muted:'#81939d',accent:'#7196aa',soft:'#e7f0f4',line:'#dce9ee',photo:'#e0edf3'},
 mono:{outer:'#ececeb',paper:'#ffffff',ink:'#242629',muted:'#8a8c8d',accent:'#5c5f63',soft:'#f0f0ef',line:'#dedfdd',photo:'#e8e8e7'}
 };
 const FIELD_KEYS=['nickname','island','handle','fruit','vibe','playtime','dream','fav1','fav2','fav3','message'];
+const COLOR_KEYS=['outer','paper','line','accent','soft','photo','ink','muted'];
 let state=loadState(),photoData={cover:null,avatar:null},photoImages={cover:null,avatar:null},dbPromise=null,renderQueued=false,statusTimeout=null;
 function loadState(){try{const raw=JSON.parse(localStorage.getItem('island-friends-maker-v1')||'null');if(raw&&typeof raw==='object')return mergeState(raw)}catch(e){}return mergeState({})}
 function mergeState(o){const s=JSON.parse(JSON.stringify(DEFAULTS));for(const k of ['theme',...FIELD_KEYS])if(typeof o[k]==='string')s[k]=o[k].slice(0,100);if(!PALETTES[s.theme])s.theme='pink';
+const custom=o.customColors&&typeof o.customColors==='object'?o.customColors:{};
+for(const key of COLOR_KEYS){if(typeof custom[key]==='string'&&/^#[0-9a-fA-F]{6}$/.test(custom[key]))s.customColors[key]=custom[key]}
 const pattern=o.pattern&&typeof o.pattern==='object'?o.pattern:{};
 if(PATTERN_TYPES.includes(pattern.kind))s.pattern.kind=pattern.kind;
 if(PATTERN_AREAS.includes(pattern.area))s.pattern.area=pattern.area;
@@ -137,7 +163,9 @@ function decodeImage(data){return new Promise((resolve,reject)=>{const img=new I
 async function setPhoto(mode,data,store=true){if(!data){photoData[mode]=null;photoImages[mode]=null;if(store)void photoStore(mode,null);updatePhotoUI(mode);scheduleRender();return}try{const img=await decodeImage(data);photoData[mode]=data;photoImages[mode]=img;if(store)void photoStore(mode,data);updatePhotoUI(mode);scheduleRender()}catch(e){status('이미지를 읽지 못했어요. JPG 또는 PNG로 다시 시도해 주세요.')}}
 function updatePhotoUI(mode){$(mode+'-controls').classList.toggle('active',!!photoImages[mode]);$(mode+'-name').textContent=photoImages[mode]?'사진 등록 완료':'선택하지 않음'}
 function updateCropUI(mode){for(const prop of ['x','y','zoom'])$(mode+'-'+prop).value=state.crop[mode][prop]}
-function syncUI(){syncPatternUI();FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['cover','avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
+function currentPalette(){const p={...(PALETTES[state.theme]||PALETTES.pink)};for(const key of COLOR_KEYS){if(state.customColors[key])p[key]=state.customColors[key]}return p}
+function syncColorUI(){const p=currentPalette();for(const key of COLOR_KEYS){const el=$('color-'+key);if(el)el.value=state.customColors[key]||p[key]}}
+function syncUI(){syncPatternUI();syncColorUI();FIELD_KEYS.forEach(k=>{const el=$(k);if(el)el.value=state[k]});document.querySelectorAll('[data-theme]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.theme===state.theme)));const list=$('activity-list');list.replaceChildren();ACTS.forEach(a=>{const l=document.createElement('label');l.className='check';const c=document.createElement('input');c.type='checkbox';c.checked=state.activities.includes(a);c.addEventListener('change',()=>{if(c.checked){if(!state.activities.includes(a))state.activities.push(a)}else state.activities=state.activities.filter(x=>x!==a);persist()});l.append(c,document.createTextNode(a));list.appendChild(l)});for(const mode of ['cover','avatar']){updateCropUI(mode);updatePhotoUI(mode)}}
 function syncPatternUI(){
  $('pattern-kind').value=state.pattern.kind;
  $('pattern-area').value=state.pattern.area;
@@ -158,9 +186,11 @@ for(const key of ['size','gap','opacity'])$('pattern-'+key).addEventListener('in
  persist();
 });
 $('pattern-color').addEventListener('input',e=>{state.pattern.color=e.target.value;persist()});
+document.querySelectorAll('[data-color-key]').forEach(input=>input.addEventListener('input',e=>{state.customColors[e.target.dataset.colorKey]=e.target.value;syncTheme();persist()}));
+$('reset-colors').addEventListener('click',()=>{for(const key of COLOR_KEYS)state.customColors[key]='';syncColorUI();syncTheme();persist();status('직접 지정한 색상을 지우고 테마 색으로 되돌렸어요.')});
 FIELD_KEYS.forEach(k=>$(k).addEventListener('input',e=>{state[k]=e.target.value;persist()}));
 document.querySelectorAll('[data-theme]').forEach(b=>b.addEventListener('click',()=>{state.theme=b.dataset.theme;syncTheme();persist()}));
-function syncTheme(){document.querySelectorAll('[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===state.theme)));const p=PALETTES[state.theme];document.documentElement.style.setProperty('--accent',p.accent);document.documentElement.style.setProperty('--focus',p.accent);const primary=document.querySelector('.btn.primary');primary.style.background=p.accent;primary.style.borderColor=p.accent}
+function syncTheme(){document.querySelectorAll('[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===state.theme)));const p=currentPalette();document.documentElement.style.setProperty('--bg',p.outer);document.documentElement.style.setProperty('--text',p.ink);document.documentElement.style.setProperty('--border',p.line);document.documentElement.style.setProperty('--soft',p.soft);document.documentElement.style.setProperty('--accent',p.accent);document.documentElement.style.setProperty('--focus',p.accent);const primary=document.querySelector('.btn.primary');primary.style.background=p.accent;primary.style.borderColor=p.accent;syncColorUI()}
 for(const mode of ['cover','avatar']){$(mode+'-file').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(!file.type.startsWith('image/')&&!/\.(jpg|jpeg|png|webp|gif|heic|heif)$/i.test(file.name)){status('이미지 파일을 골라 주세요.');return}try{const raw=await readFileAsDataURL(file);const img=await decodeImage(raw);const max=mode==='cover'?2100:1000;const scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.naturalWidth*scale));c.height=Math.max(1,Math.round(img.naturalHeight*scale));const t=c.getContext('2d');t.fillStyle='#ffffff';t.fillRect(0,0,c.width,c.height);t.drawImage(img,0,0,c.width,c.height);const processed=c.toDataURL('image/jpeg',0.88);state.crop[mode]={x:50,y:50,zoom:1};updateCropUI(mode);await setPhoto(mode,processed);persist();status('사진이 적용됐어요!')}catch(err){status('이 사진은 지원되지 않는 형식이에요. JPG/PNG를 이용해 주세요.')}finally{e.target.value=''}});
 }
 function readFileAsDataURL(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
@@ -257,7 +287,7 @@ function pill(value,x,y,maxW,p,filled=false){let label=String(value);font(24,700
 function chips(items,x,y,maxWidth,p,maxRows=2){const values=items.map(v=>String(v).trim()).filter(Boolean);let cx=x,cy=y,row=0;let shown=0;for(const value of values){font(23,650);const desired=Math.max(107,Math.min(maxWidth,ctx.measureText(value).width+55));if(cx+desired>x+maxWidth&&cx>x){row++;cx=x;cy+=63}if(row>=maxRows)break;const w=pill(value,cx,cy,Math.min(desired,maxWidth),p);cx+=w+12;shown++}if(shown<values.length){const more=`+${values.length-shown}`;if(cx+91>x+maxWidth){if(row+1<maxRows){row++;cy+=63;cx=x}else{cx=x+maxWidth-86}}pill(more,cx,cy,86,p)} }
 function meta(label,value,x,y,w,p){caps(label,x,y,p);fitted(value,x,y+44,w-10,29,p.ink,650,18)}
 function draw(){
- const p=PALETTES[state.theme]||PALETTES.cream;ctx.clearRect(0,0,WIDTH,HEIGHT);
+ const p=currentPalette();ctx.clearRect(0,0,WIDTH,HEIGHT);
  ctx.fillStyle=p.outer;ctx.fillRect(0,0,WIDTH,HEIGHT);
  rect(32,32,1136,1536,34,p.paper,p.line,2);
  if(state.pattern.area==='card'||state.pattern.area==='both')drawPattern(32,32,1136,1536,34);
